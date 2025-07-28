@@ -1,0 +1,76 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "JobFinder/1.0.0": {
+        "dependencies": {
+          "RestSharp": "112.1.0",
+          "Selenium.Support": "4.34.0",
+          "Selenium.WebDriver": "4.34.0"
+        },
+        "runtime": {
+          "JobFinder.dll": {}
+        }
+      },
+      "RestSharp/112.1.0": {
+        "runtime": {
+          "lib/net8.0/RestSharp.dll": {
+            "assemblyVersion": "112.1.0.0",
+            "fileVersion": "112.1.0.0"
+          }
+        }
+      },
+      "Selenium.Support/4.34.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.34.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.34.0": {
+        "runtime": {
+          "lib/net8.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JobFinder/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RestSharp/112.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bOUGNZqhhv/QeCXHTKEUil846yBjwWXpzPKjO67kFvaAOoF361z7jLY5BMnuZ6WD2WQRA750sNMcK7MSPCQ5Mg==",
+      "path": "restsharp/112.1.0",
+      "hashPath": "restsharp.112.1.0.nupkg.sha512"
+    },
+    "Selenium.Support/4.34.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+GROvBcro1ayU9PlGu4Q6xGyRk+wlbwGrmL3lZqm+s6T+NVs0Fmp2r8t6DvKMY/ZaDh9svkvxqN808+EnFPhDw==",
+      "path": "selenium.support/4.34.0",
+      "hashPath": "selenium.support.4.34.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.34.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uNx+GF7WugHDPV2zpGDPlbSn3STQ6n0xFskFSeJdhEuuUTkIDfAsYnjVUiQidWDpy7mKzTz53ae7Thjghl3dng==",
+      "path": "selenium.webdriver/4.34.0",
+      "hashPath": "selenium.webdriver.4.34.0.nupkg.sha512"
+    }
+  }
+}

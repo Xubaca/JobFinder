@@ -8,40 +8,19 @@ using System.Net.Http.Headers;
 using RestSharp;
 using System;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Internal;
 
 namespace JobFinder.Services
 {
     class SapoEmprego
     {
-        public static async Task<string> Search()
+        static /*public*/ int page_counter = 1;
+
+        static public void PageIncremet() => page_counter += 1;
+        static public void ResetPageCounter() => page_counter = 1;
+        public static async Task<string> Search(string search_term, string city)
         {
-            //var client = new HttpClient();
-
-            //client.DefaultRequestHeaders.UserAgent.ParseAdd(
-            //    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
-            //    "(KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
-            //);
-
-            //client.DefaultRequestHeaders.Accept.Add(
-            //    new MediaTypeWithQualityHeaderValue("application/json")
-            //);
-
-            //client.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
-
-            //client.DefaultRequestHeaders.Referrer = new Uri("https://emprego.sapo.pt/offers");
-
-            //client.DefaultRequestHeaders.Add("sec-ch-ua", "\"Chromium\";v=\"138\", \"Not)A;Brand\";v=\"8\"");
-            //client.DefaultRequestHeaders.Add("sec-ch-ua-mobile", "?0");
-            //client.DefaultRequestHeaders.Add("sec-ch-ua-platform", "\"Windows\"");
-
-            //var client = new RestClient("https://w16azmcoutsysd1.montepio.com/ConnectAPI/rest/salesPointAuth/GetSPToken");
-            //var request = new RestRequest(Method.Post);
-            //request.AddHeader("Authorization", "Bearer 05bfffe6-4614-4581-ab3e-4b26e7f5b10e");
-            //request.AddHeader("Content-Type", "application/json");
-            //request.AddHeader("User-Agent", "insomnia/10.3.0");
-            //request.AddParameter("application/json", "{\n    \"username\": \"MCA_GMC_CC\",\n    \"password\": \"Abc1234%\"\n}", ParameterType.RequestBody);
-            //RestResponse response = client.Execute(request);
-
+            
             var handler = new HttpClientHandler
             {
                 UseCookies = false // We'll set manual Cookie header
@@ -49,15 +28,14 @@ namespace JobFinder.Services
 
             using var client = new HttpClient(handler);
 
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://emprego.sapo.pt/offers/search?local=porto&categoria=informatica-tecnologias&pesquisa=.net&pagina=4&ordem=relevancia");
-
+            var request = new HttpRequestMessage(HttpMethod.Get, $"https://emprego.sapo.pt/offers/search?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia");
             // Add all required headers
             request.Headers.Accept.ParseAdd("application/json, text/plain, */*");
             request.Headers.Add("accept-language", "en-US,en;q=0.6");
             request.Headers.Add("cache-control", "no-cache");
             request.Headers.Add("pragma", "no-cache");
             request.Headers.Add("priority", "u=1, i");
-            request.Headers.Referrer = new Uri("https://emprego.sapo.pt/offers?local=porto&categoria=informatica-tecnologias&pesquisa=.net&pagina=4&ordem=relevancia");
+            request.Headers.Referrer = new Uri($"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia");
             request.Headers.Add("sec-ch-ua", "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Brave\";v=\"138\"");
             request.Headers.Add("sec-ch-ua-mobile", "?0");
             request.Headers.Add("sec-ch-ua-platform", "\"Windows\"");
@@ -85,7 +63,7 @@ namespace JobFinder.Services
             Console.WriteLine(body);
 
             MessageBox.Show(body);
-
+            if (response.StatusCode == System.Net.HttpStatusCode.OK) SapoEmprego.PageIncremet();
 
             return response.StatusCode == System.Net.HttpStatusCode.OK ? body : "Error";
         }

@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using JobFinder.Services;
+
 namespace JobFinder
 {
     public partial class Form1 : Form
@@ -29,9 +30,37 @@ namespace JobFinder
 
         private void btn_Begin_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Hello", "Window Class Names");
-            SapoEmprego.Search();
-
+            string[] search_terms = this.txtb_Search.Text.Trim().Split( new string[] { Environment.NewLine }, StringSplitOptions.TrimEntries);
+            string[] cities = this.textBox1.Text.Split(';', StringSplitOptions.TrimEntries);
+            //In case the user didnt get the memo:
+            if (search_terms.Length == 0 || search_terms[0] == "")
+            {
+                MessageBox.Show("Please enter a search term.");
+                return;
+            }
+            if (cities.Length == 0 || cities[0] == "")
+            {
+                MessageBox.Show("Please enter a city.");
+                return;
+            }
+            
+            //remove empty entries
+            cities = cities.Where(c => c != "").ToArray();
+            search_terms = search_terms.Where(st => st != "").ToArray();
+            ThreadPool.SetMaxThreads(10, 10);
+            Random rnd = new Random();
+            for(int i = 0; i < cities.Length; i++)
+            {
+                for(int j = 0; j < search_terms.Length; j++)
+                {
+                    //ia meter estes pedido async dentro de uma workerThread mas acho que o overhead de dar manage as cookies não vale o esforço.
+                    int sec_to_wait = rnd.Next(1000, 5000);
+                    //if we're too fast will get our cookies blocked, forcing us to get new ones, delaying the program due to the cost of creating a new sellenium driver
+                    Task.Delay(sec_to_wait).Wait();
+                    //por causa de como os processadores funcionam é muito mais rapido fazer assim doque search terms primeiro e depois cidades
+                    SapoEmprego.Search(search_terms[j], cities[i]);
+                }
+            }
         }
     }
 }

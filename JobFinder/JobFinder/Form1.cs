@@ -53,6 +53,7 @@ namespace JobFinder
             {
                 for(int j = 0; j < search_terms.Length; j++)
                 {
+                    NetEmprego.Search(search_terms[j], cities[i]);
                     //ia meter estes pedido async dentro de uma workerThread mas acho que o overhead de dar manage as cookies não vale o esforço.
                     int sec_to_wait = rnd.Next(1000, 5000);
                     //if we're too fast will get our cookies blocked, forcing us to get new ones, delaying the program due to the cost of creating a new sellenium driver
@@ -61,6 +62,7 @@ namespace JobFinder
                     SapoEmprego.Search(search_terms[j], cities[i]);
                 }
             }
+            Task.WaitAll();
         }
     }
 }

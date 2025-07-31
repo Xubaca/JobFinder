@@ -1,10 +1,12 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace JobFinder.Services
 {
@@ -39,16 +41,73 @@ namespace JobFinder.Services
             { "Viana do Castelo",28 },
             { "Vila Real",6 },
             { "Viseu",8 },
+            { "Outros Locais - Estrangeiro",29 }
         };
 
         public static async Task Search(string search_term, string city)
         {
-            ChromeDriver driver = new ChromeDriver(PROJECT_Directory + @"\chromedriver.exe");
-            driver.Navigate().GoToUrl("https://www.net-empregos.com/pesquisa-empregos.asp?chaves=.net&cidade=Porto&categoria=5&zona=2&tipo=0");
+            ChromeDriver driver = new ChromeDriver(/*PROJECT_Directory + @"\chromedriver.exe"*/);
+            city = char.ToUpper(city[0]) + city.Substring(1);
+            int zone = regiao[city];
+            driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&cidade={city}&categoria=5&zona={zone}&tipo=0");
+
+            Disable_Initial_Cookies(ref driver);
             // Implement the search logic for NetEmprego here
             // This is a placeholder for the actual implementation
             throw new NotImplementedException("NetEmprego search functionality is not implemented yet.");
+            //*[@id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection"]
             return;
+        }
+
+        public static bool Disable_Initial_Cookies(ref ChromeDriver driver)
+        {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15000);
+            int index = 0;
+            while (index < 5)
+            {
+                IWebElement permitirSelecao;
+                try
+                {
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
+                    // i dont for it via "id" or class name since this way is future proof so that in case some changes are made the text is the least likely part of the html element
+                    //to change
+                    permitirSelecao = driver.FindElement(by: By.XPath("//button[normalize-space(text())='Permitir seleção']"));
+
+                    permitirSelecao.Click();
+                    index++;
+                }
+                catch
+                {
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
+                    index++;
+                    continue;
+                }
+                if (index > 1)
+                {
+                    index = 0;
+                    break;
+                }
+            }
+            while (index < 5)
+            {
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
+                IWebElement ativarAlertas;
+                try
+                {
+                    ativarAlertas = driver.FindElement(by: By.XPath("//button[normalize-space(text())='Não Ativar']"));
+
+                    ativarAlertas.Click();
+                    index++;
+
+                }
+                catch
+                {
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1500);
+                    index++;
+                    continue;
+                }
+            }
+            return false;
         }
     }
 }

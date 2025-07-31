@@ -35,6 +35,7 @@ namespace JobFinder
             txtb_Search = new TextBox();
             lb_Search_City = new Label();
             textBox1 = new TextBox();
+            btn_Teste = new Button();
             SuspendLayout();
             // 
             // btn_Begin
@@ -83,12 +84,24 @@ namespace JobFinder
             textBox1.Size = new Size(255, 23);
             textBox1.TabIndex = 5;
             // 
+            // btn_Teste
+            // 
+            btn_Teste.AccessibleRole = AccessibleRole.MenuBar;
+            btn_Teste.Location = new Point(533, 8);
+            btn_Teste.Name = "btn_Teste";
+            btn_Teste.Size = new Size(118, 27);
+            btn_Teste.TabIndex = 6;
+            btn_Teste.Text = "teste";
+            btn_Teste.UseVisualStyleBackColor = true;
+            btn_Teste.Click += btn_Teste_Click;
+            // 
             // Form1
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_Teste);
             Controls.Add(textBox1);
             Controls.Add(lb_Search_City);
             Controls.Add(txtb_Search);
@@ -107,5 +120,6 @@ namespace JobFinder
         private TextBox txtb_Search;
         private Label lb_Search_City;
         private TextBox textBox1;
+        private Button btn_Teste;
     }
 }

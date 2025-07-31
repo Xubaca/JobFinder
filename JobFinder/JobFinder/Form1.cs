@@ -14,7 +14,7 @@ namespace JobFinder
         static string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
         // This will get the current PROJECT directory
-        static string PROJECT_Directory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+        static string PROJECT_Directory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
 
         static string CurrentDirectory = Directory.GetCurrentDirectory();
 
@@ -30,7 +30,7 @@ namespace JobFinder
 
         private void btn_Begin_Click(object sender, EventArgs e)
         {
-            string[] search_terms = this.txtb_Search.Text.Trim().Split( new string[] { Environment.NewLine }, StringSplitOptions.TrimEntries);
+            string[] search_terms = this.txtb_Search.Text.Trim().Split(new string[] { Environment.NewLine }, StringSplitOptions.TrimEntries);
             string[] cities = this.textBox1.Text.Split(';', StringSplitOptions.TrimEntries);
             //In case the user didnt get the memo:
             if (search_terms.Length == 0 || search_terms[0] == "")
@@ -43,15 +43,15 @@ namespace JobFinder
                 MessageBox.Show("Please enter a city.");
                 return;
             }
-            
+
             //remove empty entries
             cities = cities.Where(c => c != "").ToArray();
             search_terms = search_terms.Where(st => st != "").ToArray();
             ThreadPool.SetMaxThreads(10, 10);
             Random rnd = new Random();
-            for(int i = 0; i < cities.Length; i++)
+            for (int i = 0; i < cities.Length; i++)
             {
-                for(int j = 0; j < search_terms.Length; j++)
+                for (int j = 0; j < search_terms.Length; j++)
                 {
                     NetEmprego.Search(search_terms[j], cities[i]);
                     //ia meter estes pedido async dentro de uma workerThread mas acho que o overhead de dar manage as cookies não vale o esforço.
@@ -63,6 +63,11 @@ namespace JobFinder
                 }
             }
             Task.WaitAll();
+        }
+
+        private void btn_Teste_Click(object sender, EventArgs e)
+        {
+            NetEmprego.Search(search_term: ".Net", city: "Porto");
         }
     }
 }

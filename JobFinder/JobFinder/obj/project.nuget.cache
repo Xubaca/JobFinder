@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "ilLr9qnocIo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\JobFinder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivoxm\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
+    "C:\\Users\\ivoxm\\.nuget\\packages\\selenium.support\\4.34.0\\selenium.support.4.34.0.nupkg.sha512",
+    "C:\\Users\\ivoxm\\.nuget\\packages\\selenium.webdriver\\4.34.0\\selenium.webdriver.4.34.0.nupkg.sha512",
+    "C:\\Users\\ivoxm\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\ivoxm\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
+  ],
+  "logs": []
+}

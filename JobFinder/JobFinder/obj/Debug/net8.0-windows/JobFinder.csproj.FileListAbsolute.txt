@@ -1,0 +1,59 @@
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\selenium-manager\linux\selenium-manager
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\selenium-manager\macos\selenium-manager
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\selenium-manager\windows\selenium-manager.exe
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.exe
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.deps.json
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.runtimeconfig.json
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.pdb
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\WebDriver.Support.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\WebDriver.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.AssemblyReference.cache
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.Form1.resources
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.GenerateResource.cache
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.AssemblyInfoInputs.cache
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.AssemblyInfo.cs
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.CoreCompileInputs.cache
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.Up2Date
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\refint\JobFinder.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.pdb
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.genruntimeconfig.cache
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\ref\JobFinder.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\RestSharp.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\selenium-manager\linux\selenium-manager
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\selenium-manager\macos\selenium-manager
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\selenium-manager\windows\selenium-manager.exe
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.exe
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.deps.json
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.runtimeconfig.json
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\JobFinder.pdb
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\RestSharp.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\WebDriver.Support.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\WebDriver.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\System.Data.SQLite.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.AssemblyReference.cache
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.Form1.resources
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.GenerateResource.cache
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.AssemblyInfoInputs.cache
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.AssemblyInfo.cs
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.CoreCompileInputs.cache
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.csproj.Up2Date
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\refint\JobFinder.dll
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.pdb
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.genruntimeconfig.cache
+C:\Users\ivoxm\Desktop\Progayming\CSharp\WebScrapping\002_JobSearch\JobFinder\JobFinder\obj\Debug\net8.0-windows\ref\JobFinder.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\System.Data.SQLite.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.sourcelink.json

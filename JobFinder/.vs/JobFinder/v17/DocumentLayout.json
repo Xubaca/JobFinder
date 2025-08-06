@@ -50,8 +50,7 @@
               "RelativeToolTip": "JobFinder\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-28T12:35:21.903Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "ViewState": "AgIAACQAAAAAAAAAAAAowEUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-28T12:24:25.043Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -75,7 +73,7 @@
               "RelativeDocumentMoniker": "JobFinder\\Services\\NetEmprego.cs",
               "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\NetEmprego.cs",
               "RelativeToolTip": "JobFinder\\Services\\NetEmprego.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAowHoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAMBAAAAAAAAAAD4vxgBAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T22:54:45.303Z",
               "IsPinned": true,
@@ -91,8 +89,7 @@
               "RelativeToolTip": "JobFinder\\Services\\JobParser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:52:21.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T12:52:21.466Z"
             },
             {
               "$type": "Document",
@@ -104,8 +101,7 @@
               "RelativeToolTip": "JobFinder\\Services\\SapoEmprego.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAEwC0AAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:49:41.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T12:49:41.033Z"
             },
             {
               "$type": "Document",
@@ -117,8 +113,7 @@
               "RelativeToolTip": "JobFinder\\Model\\Job.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:49:00.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T12:49:00.291Z"
             },
             {
               "$type": "Document",
@@ -130,8 +125,7 @@
               "RelativeToolTip": "JobFinder\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:35:08.457Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T12:35:08.457Z"
             }
           ]
         }

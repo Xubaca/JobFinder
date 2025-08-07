@@ -18,7 +18,7 @@ namespace JobFinder.Services
 
         static public void PageIncremet() => page_counter += 1;
         static public void ResetPageCounter() => page_counter = 1;
-        public static async Task<string> Search(string search_term, string city)
+        public static void Search(string search_term, string city)
         {
             
             var handler = new HttpClientHandler
@@ -56,16 +56,20 @@ namespace JobFinder.Services
             );
 
             // Send and read response
-            var response = await client.SendAsync(request);
-            var body = await response.Content.ReadAsStringAsync();
+            var response = client.Send(request);
+            string body;
+            Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
+            read_body.Wait();
+            body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
 
             Console.WriteLine($"Status: {response.StatusCode}");
             Console.WriteLine(body);
 
+            Task.WaitAll();
             MessageBox.Show(body);
             if (response.StatusCode == System.Net.HttpStatusCode.OK) SapoEmprego.PageIncremet();
 
-            return response.StatusCode == System.Net.HttpStatusCode.OK ? body : "Error";
+            //return response.StatusCode == System.Net.HttpStatusCode.OK ? body : "Error";
         }
     }
 }

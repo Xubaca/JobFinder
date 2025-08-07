@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ilLr9qnocIo=",
+  "dgSpecHash": "NGJbWjsInjY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\JobFinder.csproj",
+  "projectFilePath": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\JobFinder.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivoxm\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\ivoxm\\.nuget\\packages\\selenium.support\\4.34.0\\selenium.support.4.34.0.nupkg.sha512",

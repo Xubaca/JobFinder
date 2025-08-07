@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\JobFinder.csproj": {}
+    "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\JobFinder.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\JobFinder.csproj": {
+    "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\JobFinder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\JobFinder.csproj",
+        "projectUniqueName": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\JobFinder.csproj",
         "projectName": "JobFinder",
-        "projectPath": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\JobFinder.csproj",
+        "projectPath": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\JobFinder.csproj",
         "packagesPath": "C:\\Users\\ivoxm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\obj\\",
+        "outputPath": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -87,7 +87,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

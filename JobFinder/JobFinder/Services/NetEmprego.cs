@@ -1,6 +1,7 @@
 ﻿using JobFinder.Model;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Chromium;
 using OpenQA.Selenium.DevTools.V136.IndexedDB;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace JobFinder.Services
 
         static Random rdn = new Random();
 
+        //XPath to job postings divs
         static public string current_job_XPath = "//div[@class='job-item media']";
 
         public enum HTML_Action
@@ -68,10 +70,13 @@ namespace JobFinder.Services
             Task.Delay(rdn.Next(min_range, max_range));
         }
 
-        public static async Task Search(string search_term, string city)
+        public static void Search(string search_term, string city)
         {
             //when i release it ill make it headless for a preformance boost, TODO:look into installing adblock on the driver
-            ChromeDriver driver = new ChromeDriver(/*PROJECT_Directory + @"\chromedriver.exe"*/);
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--headless");
+
+            ChromeDriver driver = new ChromeDriver(options/*PROJECT_Directory + @"\chromedriver.exe"*/);
             city = char.ToUpper(city[0]) + city.Substring(1);
             int zone = regiao[city];
 
@@ -79,8 +84,9 @@ namespace JobFinder.Services
 
             Disable_Initial_Cookies(ref driver);
 
-            //driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&cidade={city}&categoria=5&zona={zone}&tipo=0");
-            driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&categoria=5");
+            driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&cidade={city}&categoria=5&zona={zone}&tipo=0");
+            //Para testes é mais facil porque usar java como search_term sem especificar a localização é certo que vai ter mais que uma página
+            //driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&categoria=5");
 
             VariableWaitTime();
 

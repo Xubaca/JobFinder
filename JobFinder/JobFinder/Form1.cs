@@ -47,17 +47,19 @@ namespace JobFinder
             //remove empty entries
             cities = cities.Where(c => c != "").ToArray();
             search_terms = search_terms.Where(st => st != "").ToArray();
-            ThreadPool.SetMaxThreads(10, 10);
             Random rnd = new Random();
+            //TODO: implement said ThreadPool , set max to 4 in order to not break the 
+            ThreadPool.SetMaxThreads(4, 4);
             for (int i = 0; i < cities.Length; i++)
             {
                 for (int j = 0; j < search_terms.Length; j++)
                 {
+                    //Since one runs on curl_cffi and the other on a chrome driver i can run them in parallel!
                     NetEmprego.Search(search_terms[j], cities[i]);
                     //ia meter estes pedido async dentro de uma workerThread mas acho que o overhead de dar manage as cookies não vale o esforço.
-                    int sec_to_wait = rnd.Next(1000, 5000);
+                    //int sec_to_wait = rnd.Next(1000, 5000);
                     //if we're too fast will get our cookies blocked, forcing us to get new ones, delaying the program due to the cost of creating a new sellenium driver
-                    Task.Delay(sec_to_wait).Wait();
+                    //Task.Delay(sec_to_wait).Wait();
                     //por causa de como os processadores funcionam é muito mais rapido fazer assim doque search terms primeiro e depois cidades
                     SapoEmprego.Search(search_terms[j], cities[i]);
                 }
@@ -67,7 +69,8 @@ namespace JobFinder
 
         private void btn_Teste_Click(object sender, EventArgs e)
         {
-            NetEmprego.Search(search_term: "Java", city: "Porto");
+            //NetEmprego.Search(search_term: ".NET", city: "Porto");
+            SapoEmprego.Search(search_term: ".NET", city: "Porto");
         }
     }
 }

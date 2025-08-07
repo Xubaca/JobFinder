@@ -1,34 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\",
+  "WorkspaceRootPath": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\desktop\\progayming\\csharp\\webscrapping\\002_jobsearch\\jobfinder\\jobfinder\\services\\netemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\services\\netemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\desktop\\progayming\\csharp\\webscrapping\\002_jobsearch\\jobfinder\\jobfinder\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\onedrive\\ambiente de trabalho\\csharp\\fullstack\\002_jobfinder\\jobfinder\\jobfinder\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\desktop\\progayming\\csharp\\webscrapping\\002_jobsearch\\jobfinder\\jobfinder\\model\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\model\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\desktop\\progayming\\csharp\\webscrapping\\002_jobsearch\\jobfinder\\jobfinder\\services\\jobparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\services\\jobparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\desktop\\progayming\\csharp\\webscrapping\\002_jobsearch\\jobfinder\\jobfinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\desktop\\progayming\\csharp\\webscrapping\\002_jobsearch\\jobfinder\\jobfinder\\services\\sapoemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\onedrive\\ambiente de trabalho\\csharp\\fullstack\\002_jobfinder\\jobfinder\\jobfinder\\services\\sapoemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\services\\sapoemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\jobfinder\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\jobfinder\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\onedrive\\ambiente de trabalho\\csharp\\fullstack\\002_jobfinder\\jobfinder\\jobfinder\\services\\netemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\services\\netemprego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\onedrive\\ambiente de trabalho\\csharp\\fullstack\\002_jobfinder\\jobfinder\\jobfinder\\model\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\model\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\onedrive\\ambiente de trabalho\\csharp\\fullstack\\002_jobfinder\\jobfinder\\jobfinder\\services\\jobparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\services\\jobparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|c:\\users\\ivoxm\\onedrive\\ambiente de trabalho\\csharp\\fullstack\\002_jobfinder\\jobfinder\\jobfinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A1CAE1-78C6-472D-B9AA-72D6FBB5174F}|JobFinder\\JobFinder.csproj|solutionrelative:jobfinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,42 +38,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Form1.cs",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Form1.cs",
               "RelativeDocumentMoniker": "JobFinder\\Form1.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Form1.cs [Design]",
-              "RelativeToolTip": "JobFinder\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Form1.cs [Projeto]",
+              "RelativeToolTip": "JobFinder\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-28T12:35:21.903Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Form1.cs",
-              "RelativeDocumentMoniker": "JobFinder\\Form1.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Form1.cs",
-              "RelativeToolTip": "JobFinder\\Form1.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowEUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:24:25.043Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Form1.cs",
+              "RelativeDocumentMoniker": "JobFinder\\Form1.cs",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Form1.cs",
+              "RelativeToolTip": "JobFinder\\Form1.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswD4AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T12:24:25.043Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "NetEmprego.cs",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\NetEmprego.cs",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Services\\NetEmprego.cs",
               "RelativeDocumentMoniker": "JobFinder\\Services\\NetEmprego.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\NetEmprego.cs",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Services\\NetEmprego.cs",
               "RelativeToolTip": "JobFinder\\Services\\NetEmprego.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAD4vxgBAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T22:54:45.303Z",
               "IsPinned": true,
@@ -81,47 +83,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JobParser.cs",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\JobParser.cs",
-              "RelativeDocumentMoniker": "JobFinder\\Services\\JobParser.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\JobParser.cs",
-              "RelativeToolTip": "JobFinder\\Services\\JobParser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "SapoEmprego.cs",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Services\\SapoEmprego.cs",
+              "RelativeDocumentMoniker": "JobFinder\\Services\\SapoEmprego.cs",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Services\\SapoEmprego.cs",
+              "RelativeToolTip": "JobFinder\\Services\\SapoEmprego.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwEgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:52:21.466Z"
+              "WhenOpened": "2025-07-28T12:49:41.033Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SapoEmprego.cs",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\SapoEmprego.cs",
-              "RelativeDocumentMoniker": "JobFinder\\Services\\SapoEmprego.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Services\\SapoEmprego.cs",
-              "RelativeToolTip": "JobFinder\\Services\\SapoEmprego.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAEwC0AAAB2AAAAAAAAAA==",
+              "Title": "JobParser.cs",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Services\\JobParser.cs",
+              "RelativeDocumentMoniker": "JobFinder\\Services\\JobParser.cs",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Services\\JobParser.cs",
+              "RelativeToolTip": "JobFinder\\Services\\JobParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:49:41.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Job.cs",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Model\\Job.cs",
-              "RelativeDocumentMoniker": "JobFinder\\Model\\Job.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Model\\Job.cs",
-              "RelativeToolTip": "JobFinder\\Model\\Job.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:49:00.291Z"
+              "WhenOpened": "2025-07-28T12:52:21.466Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Job.cs",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Model\\Job.cs",
+              "RelativeDocumentMoniker": "JobFinder\\Model\\Job.cs",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Model\\Job.cs",
+              "RelativeToolTip": "JobFinder\\Model\\Job.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T12:49:00.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Program.cs",
               "RelativeDocumentMoniker": "JobFinder\\Program.cs",
-              "ToolTip": "C:\\Users\\ivoxm\\Desktop\\Progayming\\CSharp\\WebScrapping\\002_JobSearch\\JobFinder\\JobFinder\\Program.cs",
+              "ToolTip": "C:\\Users\\ivoxm\\OneDrive\\Ambiente de Trabalho\\CSharp\\FullStack\\002_JobFinder\\JobFinder\\JobFinder\\Program.cs",
               "RelativeToolTip": "JobFinder\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

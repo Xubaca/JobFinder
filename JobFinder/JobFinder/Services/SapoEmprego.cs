@@ -27,7 +27,7 @@ namespace JobFinder.Services
             };
 
             using var client = new HttpClient(handler);
-
+            #region headers
             var request = new HttpRequestMessage(HttpMethod.Get, $"https://emprego.sapo.pt/offers/search?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia");
             // Add all required headers
             request.Headers.Accept.ParseAdd("application/json, text/plain, */*");
@@ -54,6 +54,7 @@ namespace JobFinder.Services
                 "XSRF-TOKEN=eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0; " +
                 "sapo_emprego_session=waBxhdkCGq4lraQKYZfHSUSnd4Weya54wikrDjV0"
             );
+            #endregion
 
             // Send and read response
             var response = client.Send(request);

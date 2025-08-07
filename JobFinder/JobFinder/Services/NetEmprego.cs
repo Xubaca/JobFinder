@@ -3,12 +3,15 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Chromium;
 using OpenQA.Selenium.DevTools.V136.IndexedDB;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 
@@ -27,6 +30,7 @@ namespace JobFinder.Services
         //XPath to job postings divs
         static public string current_job_XPath = "//div[@class='job-item media']";
 
+        public string JSON_Name = "";
         public enum HTML_Action
         {
             Click = 1,
@@ -35,7 +39,7 @@ namespace JobFinder.Services
             ComboBox = 4
         }
 
-        static public List<Job> job_list = new List<Job>();
+        public List<Job> job_list = new List<Job>();
 
         static Dictionary<string, int> regiao = new Dictionary<string, int>()
         {
@@ -67,12 +71,16 @@ namespace JobFinder.Services
         static private void VariableWaitTime(int min = 0,int max = 0)
         {
             int min_range = (min != 0?min : 2), max_range = (max != 0 ? max : 4);
-            Task.Delay(rdn.Next(min_range, max_range));
+            Thread.Sleep(rdn.Next(min_range * 1000, max_range * 1000));
         }
 
-        public static void Search(string search_term, string city)
+        public void Search(string search_term, string city = "")
         {
-            //when i release it ill make it headless for a preformance boost, TODO:look into installing adblock on the driver
+            //set up for the save inside the DB Folder
+            string processed_searchTerm = search_term.Trim().Replace(' ', '_');
+            string processed_city = city.Trim().Replace(' ', '_');
+            JSON_Name = processed_city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
+
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--headless");
 
@@ -84,17 +92,15 @@ namespace JobFinder.Services
 
             Disable_Initial_Cookies(ref driver);
 
-            driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&cidade={city}&categoria=5&zona={zone}&tipo=0");
-            //Para testes é mais facil porque usar java como search_term sem especificar a localização é certo que vai ter mais que uma página
-            //driver.Navigate().GoToUrl($"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&categoria=5");
+            driver.Navigate().GoToUrl(city != "" ? $"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&cidade={city}&categoria=5&zona={zone}&tipo=0"
+                : $"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&categoria=5&tipo=0");
 
             VariableWaitTime();
 
             Page_Scrapper(ref driver, driver.Url, By.XPath(current_job_XPath));
 
             VariableWaitTime();
-            //throw new NotImplementedException("NetEmprego search functionality is not implemented yet.");
-            //*[@id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection"]
+
             return;
         }
 
@@ -102,12 +108,13 @@ namespace JobFinder.Services
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             int index = 0;
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
             while (index < 5)
             {
                 try
                 {
-                    var element = driver.FindElement(By.XPath("//button[@id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection']"));
-                    element.Click();
+                    var cookieBtn =  wait.Until(driver => driver.FindElement(By.Id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection")));
+                    cookieBtn.Click();
                 }
                 catch
                 {
@@ -133,52 +140,6 @@ namespace JobFinder.Services
                     index++;
                 }
             }
-            #region oldCode
-            //while (index < 5)
-            //{
-            //    IWebElement permitirSelecao;
-            //    try
-            //    {
-            //        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
-            //        // i dont for it via "id" or class name since this way is future proof so that in case some changes are made the text is the least likely part of the html element
-            //        //to change
-            //        permitirSelecao = driver.FindElement(by: By.XPath("//button[normalize-space(text())='Permitir seleção']"));
-
-            //        permitirSelecao.Click();
-            //        index++;
-            //    }
-            //    catch
-            //    {
-            //        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
-            //        index++;
-            //        continue;
-            //    }
-            //    if (index > 1)
-            //    {
-            //        index = 0;
-            //        break;
-            //    }
-            //}
-            //while (index < 5)
-            //{
-            //    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
-            //    IWebElement ativarAlertas;
-            //    try
-            //    {
-            //        ativarAlertas = driver.FindElement(by: By.XPath("//button[normalize-space(text())='Não Ativar']"));
-
-            //        ativarAlertas.Click();
-            //        index++;
-
-            //    }
-            //    catch
-            //    {
-            //        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1500);
-            //        index++;
-            //        continue;
-            //    }
-            //}
-            #endregion oldCode
             return false;
         }
 
@@ -223,7 +184,7 @@ namespace JobFinder.Services
             return validation;
         }
 
-        static public bool Page_Scrapper(ref ChromeDriver driver,string url ,By element)
+        public bool Page_Scrapper(ref ChromeDriver driver,string url ,By element)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             url= driver.Url;
@@ -244,14 +205,34 @@ namespace JobFinder.Services
                     continue;
                 }
                 //it runs all job postings of the chosen search term and city till theres no more pages
+                //TODO: Implement Paralellism either by scrapping all pages first then threadpool/Parallel.ForEachAsync or by scrapping with multiple instances of Chrome at the same time
+                //With Paralellism
+                //ParallelOptions options = new ParallelOptions { MaxDegreeOfParallelism = 4 };
+                //Parallel.ForEachAsync((IReadOnlyCollection<IWebElement>)elementList, options,
+                //    async (element) =>
+                //    {
+                //        Job current_job = new Job();
+                //        current_job.Title = html_element.FindElement(By.XPath(".//a[@class='oferta-link']")).Text;
+                //        current_job.Company = html_element.FindElement(By.XPath(".//li[i[contains(@class, 'flaticon-work')]]")).Text.Trim();
+                //        current_job.Location = html_element.FindElement(By.XPath(".//li[i[contains(@class, 'flaticon-pin')]]")).Text.Trim();
+                //        current_job.Url = html_element.FindElement(By.XPath(".//a[@class='oferta-link']")).GetAttribute("href");
+
+                //        current_job.Salary = null; //there isnt a salary description on the page
+
+                //        lock (job_list)
+                //        {
+                //            job_list.Add(current_job);
+                //        }
+
+                //    });
                 foreach (IWebElement html_element in elementList)
                 {
                     Job current_job = new Job();
-                    current_job.Title = html_element.FindElement(By.XPath("//a[@class='oferta-link']")).Text;
-                    var companyElement = driver.FindElement(By.XPath("//li[i[contains(@class, 'flaticon-work')]]"));
-                    current_job.Company = companyElement.Text.Trim();
-                    current_job.Location = html_element.FindElement(By.XPath("//li[i[contains(@class, 'flaticon-pin')]]")).Text.Trim();
-                    current_job.Url = html_element.FindElement(By.XPath("//a[@class='oferta-link']")).GetAttribute("href");
+                    current_job.Title = html_element.FindElement(By.XPath(".//a[@class='oferta-link']")).Text;
+                    current_job.Company = html_element.FindElement(By.XPath(".//li[i[contains(@class, 'flaticon-work')]]")).Text.Trim();
+                    current_job.Location = html_element.FindElement(By.XPath(".//li[i[contains(@class, 'flaticon-pin')]]")).Text.Trim();
+                    current_job.Url = html_element.FindElement(By.XPath(".//a[@class='oferta-link']")).GetAttribute("href");
+
                     current_job.Salary = null; //there isnt a salary description on the page
 
                     lock (job_list)
@@ -263,7 +244,13 @@ namespace JobFinder.Services
                 final_page = Page_Turner(ref driver, page_index: page_index,url);
                 if (final_page)
                 {
+                    string complete_path = PROJECT_Directory + @"\JobFinder\DB\" + JSON_Name;
                     //TODO: Save the json , i should organize via {search_term}_{city}.json EXEMPLE: ".NET_Lisboa.json", i should also replace all spaces with underscores
+                    using (StreamWriter swriter = new StreamWriter(complete_path))
+                    {
+                        //System.Text.Json.Serialization.Metadata.JsonTypeInfo js = new System.Text.Json.Serialization.Metadata.JsonTypeInfo() { };
+                        swriter.Write(System.Text.Json.JsonSerializer.Serialize(value: job_list));
+                    }
                     break;
                 }
                 page_index++;

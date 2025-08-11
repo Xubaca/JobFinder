@@ -161,7 +161,7 @@ namespace JobFinder.Services
             HtmlWeb client = new HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = client.Load(url + $"&page={page_index + 1}");
 
-            HtmlNode lastPage = doc.DocumentNode.SelectSingleNode("//button[@id='btn-voltar']");
+            HtmlNode lastPage = doc.DocumentNode.SelectSingleNode("//div[@class='job-item media']");
 
             if (lastPage == null) return false;
 

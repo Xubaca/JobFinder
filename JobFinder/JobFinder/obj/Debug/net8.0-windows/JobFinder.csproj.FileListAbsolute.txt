@@ -57,3 +57,4 @@ C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobF
 C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
 C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\obj\Debug\net8.0-windows\JobFinder.sourcelink.json
+C:\Users\ivoxm\OneDrive\Ambiente de Trabalho\CSharp\FullStack\002_JobFinder\JobFinder\JobFinder\bin\Debug\net8.0-windows\HtmlAgilityPack.dll

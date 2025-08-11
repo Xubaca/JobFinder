@@ -72,8 +72,9 @@ namespace JobFinder
         private void btn_Teste_Click(object sender, EventArgs e)
         {
             NetEmprego netEmprego = new NetEmprego();
-            netEmprego.Search(search_term: ".NET", city: "Porto");
-            SapoEmprego.Search(search_term: ".NET", city: "Porto");
+            //netEmprego.Search(search_term: ".NET", city: "Porto");
+            //SapoEmprego.Search(search_term: ".NET", city: "Porto");
+            netEmprego.Optimized_Search(search_term: ".NET", city: "Porto");
         }
     }
 }

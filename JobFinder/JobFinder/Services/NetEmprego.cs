@@ -12,6 +12,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
+using HtmlAgilityPack;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 
@@ -73,6 +74,103 @@ namespace JobFinder.Services
             int min_range = (min != 0?min : 2), max_range = (max != 0 ? max : 4);
             Thread.Sleep(rdn.Next(min_range * 1000, max_range * 1000));
         }
+
+        #region HTMLAgilityPack
+
+        public void Optimized_Search(string search_term, string city = "")
+        {
+            //set up for the save inside the DB Folder
+            string processed_searchTerm = search_term.Trim().Replace(' ', '_');
+            string processed_city = city.Trim().Replace(' ', '_');
+            JSON_Name = processed_city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
+
+            city = char.ToUpper(city[0]) + city.Substring(1);
+            int zone = regiao[city];
+
+            //initializing the HTTP Client
+            HtmlWeb web = new HtmlWeb();
+
+            string url = city != "" 
+                ? $"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&cidade={city}&categoria=5&zona={zone}&tipo=0"
+                : $"https://www.net-empregos.com/pesquisa-empregos.asp?chaves={search_term}&categoria=5&tipo=0";
+
+            HtmlAgilityPack.HtmlDocument document = web.Load(url);
+
+            Optimized_Page_Scrapper(ref document, url, element: current_job_XPath);
+
+        }
+        public bool Optimized_Page_Scrapper(ref HtmlAgilityPack.HtmlDocument document, string url, string element)
+        {
+           
+            int page_index = 1;
+            bool final_page = false;
+
+            while (true)
+            {
+                HtmlNodeCollection elementList;
+                elementList = document.DocumentNode.SelectNodes(current_job_XPath);
+
+                foreach (HtmlNode html_element in elementList)
+                {
+                    Job current_job = new Job();
+
+                    var titleNode = html_element.SelectSingleNode(".//a[@class='oferta-link']");
+                    current_job.Title = titleNode != null ? HtmlEntity.DeEntitize(titleNode.InnerText) : "";
+
+                    var companyNode = html_element.SelectSingleNode(".//li[i[contains(@class, 'flaticon-work')]]");
+                    current_job.Company = companyNode != null ? HtmlEntity.DeEntitize(companyNode.InnerText) : "";
+
+                    var locationNode = html_element.SelectSingleNode(".//li[i[contains(@class, 'flaticon-pin')]]");
+                    current_job.Location = locationNode != null ? HtmlEntity.DeEntitize(locationNode.InnerText) : "";
+
+                    current_job.Url = titleNode != null && titleNode.Attributes["href"] != null
+                        ? HtmlEntity.DeEntitize(titleNode.Attributes["href"].Value)
+                        : "";
+
+                    current_job.Salary = null; //there isnt a salary description on the page
+
+                    lock (job_list)
+                    {
+                        job_list.Add(current_job);
+                    }
+
+                }
+                final_page = Optimized_Page_Turner(page_index: page_index, url);
+                if (final_page)
+                {
+                    string complete_path = PROJECT_Directory + @"\JobFinder\DB\" + JSON_Name;
+                    //TODO: Save the json , i should organize via {search_term}_{city}.json EXEMPLE: ".NET_Lisboa.json", i should also replace all spaces with underscores
+                    using (StreamWriter swriter = new StreamWriter(complete_path))
+                    {
+                        //System.Text.Json.Serialization.Metadata.JsonTypeInfo js = new System.Text.Json.Serialization.Metadata.JsonTypeInfo() { };
+                        swriter.Write(System.Text.Json.JsonSerializer.Serialize(value: job_list));
+                    }
+                    break;
+                }
+                page_index++;
+
+            }
+
+            return false; //should never reach here, but just in case
+        }
+
+        static public bool Optimized_Page_Turner(int page_index, string url)
+        {
+            //Human like wait time
+            VariableWaitTime(1, 3);
+            HtmlWeb client = new HtmlWeb();
+            HtmlAgilityPack.HtmlDocument doc = client.Load(url + $"&page={page_index + 1}");
+
+            HtmlNode lastPage = doc.DocumentNode.SelectSingleNode("//button[@id='btn-voltar']");
+
+            if (lastPage == null) return false;
+
+            return true;
+        }
+
+        #endregion HTMLAgilityPack
+
+        #region selenium
 
         public void Search(string search_term, string city = "")
         {
@@ -330,4 +428,5 @@ namespace JobFinder.Services
             }
         }
     }
+    #endregion selenium 
 }

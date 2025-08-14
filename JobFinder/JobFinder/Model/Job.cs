@@ -14,6 +14,8 @@ namespace JobFinder.Model
         public string Url { get; set; }
         //it most likely wont appear , but should it be on the description i should not it
         public decimal? Salary { get; set; }
+        public bool? RemoteWork { get; set; } = false;
+        public string JobDescription { get; set; } = "";
 
     }
 }

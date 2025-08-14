@@ -10,6 +10,8 @@ using System;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Internal;
 using JobFinder.Model;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace JobFinder.Services
 {
@@ -31,6 +33,62 @@ namespace JobFinder.Services
 
         static public void PageIncremet() => page_counter += 1;
 
+        //Job oferring json DTO(data transfer object)
+        #region JobOffer_DTO
+        public class SapoEmpregoRoot
+        {
+            [JsonPropertyName("offers")]
+            public List<offers> Offers { get; set; }
+        }
+
+        public class offers
+        {
+            [JsonPropertyName("offer_name")]
+            public string? OfferName { get; set; }
+
+            [JsonPropertyName("company_name")]
+            public string? CompanyName { get; set; }
+
+            [JsonPropertyName("location")]
+            public string? Location { get; set; }
+
+            [JsonPropertyName("link")]
+            public string? Link { get; set; }
+
+            [JsonPropertyName("remote_work")]
+            public bool? RemoteWork { get; set; }
+
+            [JsonPropertyName("job_description")]
+            public string? JobDescription { get; set; }
+
+            // Para casos em que "company" é um objeto, pode adicionar:
+            [JsonPropertyName("company")]
+            public CompanyInfo? Company { get; set; }
+
+            // Para casos em que "external_details" existe:
+            [JsonPropertyName("external_details")]
+            public ExternalDetails? ExternalDetails { get; set; }
+        }
+
+        public class CompanyInfo
+        {
+            [JsonPropertyName("id")]
+            public string? Id { get; set; }
+            [JsonPropertyName("name")]
+            public string? Name { get; set; }
+            // Adicione outros campos se necessário
+        }
+
+        public class ExternalDetails
+        {
+            [JsonPropertyName("link")]
+            public string? Link { get; set; }
+            [JsonPropertyName("title")]
+            public string? Title { get; set; }
+            [JsonPropertyName("description")]
+            public string? Description { get; set; }
+        }
+        #endregion JobOffer_DTO
         static public void ResetPageCounter() => page_counter = 1;
 
         public void Search(string search_term, string city="")
@@ -87,10 +145,20 @@ namespace JobFinder.Services
             read_body.Wait();
             body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
 
-            Console.WriteLine($"Status: {response.StatusCode}");
-            Console.WriteLine(body);
+            //Console.WriteLine($"Status: {response.StatusCode}");
+            //Console.WriteLine(body);
 
-            JsonSave(body);
+            JsonSerializerOptions options = new JsonSerializerOptions()
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+
+            SapoEmpregoRoot? root = JsonSerializer.Deserialize<SapoEmpregoRoot>(body, options);
+            List<offers> result = root?.Offers ?? new List<offers>();
+            // Agora 'result' contém a lista de ofertas, com campos opcionais tratados
+
+            JsonSave(JsonSerializer.Serialize(result.Where(x => x.Company == null)));
 
             Task.WaitAll();
             //MessageBox.Show(body);

@@ -30,6 +30,7 @@ namespace JobFinder.Services
 
         //XPath to job postings divs
         static public string current_job_XPath = "//div[@class='job-item media']";
+        static public string last_page_marker = "//*[@id='btn-voltar']";
 
         public string JSON_Name = "";
         public enum HTML_Action
@@ -84,8 +85,13 @@ namespace JobFinder.Services
             string processed_city = city.Trim().Replace(' ', '_');
             JSON_Name = processed_city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
 
-            city = char.ToUpper(city[0]) + city.Substring(1);
-            int zone = regiao[city];
+            int zone = 0;
+
+            if (city != "")
+            {
+                city = char.ToUpper(city[0]) + city.Substring(1);
+                zone = regiao[city];
+            }
 
             //initializing the HTTP Client
             HtmlWeb web = new HtmlWeb();
@@ -159,9 +165,11 @@ namespace JobFinder.Services
             //Human like wait time
             VariableWaitTime(1, 3);
             HtmlWeb client = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = client.Load(url + $"&page={page_index + 1}");
+            client.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";
+            string full_url = url + $"&page={page_index + 1}";
+            HtmlAgilityPack.HtmlDocument doc = client.Load(full_url);
 
-            HtmlNode lastPage = doc.DocumentNode.SelectSingleNode("//div[@class='job-item media']");
+            HtmlNode lastPage = doc.DocumentNode.SelectSingleNode(last_page_marker);
 
             if (lastPage == null) return false;
 

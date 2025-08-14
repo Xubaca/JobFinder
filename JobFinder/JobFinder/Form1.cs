@@ -74,7 +74,8 @@ namespace JobFinder
             NetEmprego netEmprego = new NetEmprego();
             //netEmprego.Search(search_term: ".NET", city: "Porto");
             //SapoEmprego.Search(search_term: ".NET", city: "Porto");
-            netEmprego.Optimized_Search(search_term: "Java", city: "Todas as Zonas");
+            //netEmprego.Optimized_Search(search_term: "Java", city: "Lisboa");
+            netEmprego.Optimized_Search(search_term: "Java");
         }
     }
 }

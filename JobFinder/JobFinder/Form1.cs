@@ -50,7 +50,7 @@ namespace JobFinder
             Random rnd = new Random();
             //TODO: implement said ThreadPool , set max to 4 in order to not break the 
             ThreadPool.SetMaxThreads(4, 4);
-
+            SapoEmprego sapoEmprego = new SapoEmprego();
             NetEmprego netEmprego = new NetEmprego();
             for (int i = 0; i < cities.Length; i++)
             {
@@ -63,7 +63,7 @@ namespace JobFinder
                     //if we're too fast will get our cookies blocked, forcing us to get new ones, delaying the program due to the cost of creating a new sellenium driver
                     //Task.Delay(sec_to_wait).Wait();
                     //por causa de como os processadores funcionam é muito mais rapido fazer assim doque search terms primeiro e depois cidades
-                    SapoEmprego.Search(search_terms[j], cities[i]);
+                    sapoEmprego.Search(search_terms[j], cities[i]);
                 }
             }
             Task.WaitAll();
@@ -71,11 +71,13 @@ namespace JobFinder
 
         private void btn_Teste_Click(object sender, EventArgs e)
         {
+            SapoEmprego sapoEmprego = new SapoEmprego();
             NetEmprego netEmprego = new NetEmprego();
             //netEmprego.Search(search_term: ".NET", city: "Porto");
             //SapoEmprego.Search(search_term: ".NET", city: "Porto");
             //netEmprego.Optimized_Search(search_term: "Java", city: "Lisboa");
             netEmprego.Optimized_Search(search_term: "Java");
+            sapoEmprego.Search(search_term: "Java");
         }
     }
 }

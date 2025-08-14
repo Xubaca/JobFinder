@@ -9,22 +9,46 @@ using RestSharp;
 using System;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Internal;
+using JobFinder.Model;
 
 namespace JobFinder.Services
 {
     class SapoEmprego
     {
+        // This will get the current WORKING directory (i.e. \bin\Debug)
+        static string workingDirectory = Environment.CurrentDirectory;
+
+        // This will get the current PROJECT directory
+        static string PROJECT_Directory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+
+        static Random rdn = new Random();
+
+        public List<Job> job_list = new List<Job>();
+
         static /*public*/ int page_counter = 1;
 
+        public string JSON_Name = "";
+
         static public void PageIncremet() => page_counter += 1;
+
         static public void ResetPageCounter() => page_counter = 1;
-        public static void Search(string search_term, string city)
+
+        public void Search(string search_term, string city="")
         {
-            
+            string processed_searchTerm = search_term.Trim().Replace(' ', '_');
+            string processed_city = city.Trim().Replace(' ', '_');
+            JSON_Name = city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
+
+
             var handler = new HttpClientHandler
             {
                 UseCookies = false // We'll set manual Cookie header
             };
+            
+            //$"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia";
+            string url = city == ""
+                ? $"https://emprego.sapo.pt/offers?&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia"
+                : $"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia";
 
             using var client = new HttpClient(handler);
             #region headers
@@ -35,7 +59,7 @@ namespace JobFinder.Services
             request.Headers.Add("cache-control", "no-cache");
             request.Headers.Add("pragma", "no-cache");
             request.Headers.Add("priority", "u=1, i");
-            request.Headers.Referrer = new Uri($"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia");
+            request.Headers.Referrer = new Uri(url);
             request.Headers.Add("sec-ch-ua", "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Brave\";v=\"138\"");
             request.Headers.Add("sec-ch-ua-mobile", "?0");
             request.Headers.Add("sec-ch-ua-platform", "\"Windows\"");
@@ -57,7 +81,7 @@ namespace JobFinder.Services
             #endregion
 
             // Send and read response
-            var response = client.Send(request);
+            HttpResponseMessage? response = client.Send(request);
             string body;
             Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
             read_body.Wait();
@@ -66,11 +90,41 @@ namespace JobFinder.Services
             Console.WriteLine($"Status: {response.StatusCode}");
             Console.WriteLine(body);
 
+            JsonSave(body);
+
             Task.WaitAll();
-            MessageBox.Show(body);
+            //MessageBox.Show(body);
             if (response.StatusCode == System.Net.HttpStatusCode.OK) SapoEmprego.PageIncremet();
 
             //return response.StatusCode == System.Net.HttpStatusCode.OK ? body : "Error";
+        }
+
+        //public bool Optimized_Page_Scrapper(ref HttpClient? client , ref HttpRequestMessage? request, string url)
+        //{
+        //    //first Request
+        //    HttpResponseMessage? response = client.Send(request);
+        //    do
+        //    {
+        //        string body;
+        //        Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
+        //        read_body.Wait();
+        //    } 
+        //    while (response.StatusCode == System.Net.HttpStatusCode.OK);
+
+        //    return true;
+        //}
+
+        public bool JsonSave(string body)
+        {
+            string complete_path = PROJECT_Directory + @"\JobFinder\DB\" + "SE_" + JSON_Name;
+            //TODO: Save the json , i should organize via {search_term}_{city}.json EXEMPLE: ".NET_Lisboa.json", i should also replace all spaces with underscores
+            using (StreamWriter swriter = new StreamWriter(complete_path))
+            {
+                //System.Text.Json.Serialization.Metadata.JsonTypeInfo js = new System.Text.Json.Serialization.Metadata.JsonTypeInfo() { };
+                swriter.Write(body/*System.Text.Json.JsonSerializer.Serialize(value: job_list)*/);
+            }
+
+            return true;
         }
     }
 }

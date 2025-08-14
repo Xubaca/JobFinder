@@ -144,7 +144,7 @@ namespace JobFinder.Services
                 final_page = Optimized_Page_Turner(page_index: page_index, url);
                 if (final_page)
                 {
-                    string complete_path = PROJECT_Directory + @"\JobFinder\DB\" + JSON_Name;
+                    string complete_path = PROJECT_Directory + @"\JobFinder\DB\" + "NE_"+JSON_Name;
                     //TODO: Save the json , i should organize via {search_term}_{city}.json EXEMPLE: ".NET_Lisboa.json", i should also replace all spaces with underscores
                     using (StreamWriter swriter = new StreamWriter(complete_path))
                     {

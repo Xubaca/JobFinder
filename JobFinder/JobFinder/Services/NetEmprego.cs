@@ -153,6 +153,11 @@ namespace JobFinder.Services
                     }
                     break;
                 }
+                else
+                {
+                    HtmlWeb client = new();
+                    document = client.Load(url);
+                }
                 page_index++;
 
             }
@@ -160,7 +165,7 @@ namespace JobFinder.Services
             return false; //should never reach here, but just in case
         }
 
-        static public bool Optimized_Page_Turner(int page_index, string url)
+        static public bool Optimized_Page_Turner(int page_index,string url)
         {
             //Human like wait time
             VariableWaitTime(1, 3);
@@ -168,7 +173,7 @@ namespace JobFinder.Services
             client.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";
             string full_url = url + $"&page={page_index + 1}";
             HtmlAgilityPack.HtmlDocument doc = client.Load(full_url);
-
+            url = full_url;
             HtmlNode lastPage = doc.DocumentNode.SelectSingleNode(last_page_marker);
 
             if (lastPage == null) return false;

@@ -22,6 +22,8 @@ namespace JobFinder.Services
 
         List<Job> job_list = new();
 
+        public string JSON_Name = "";
+
         //var reverseLocality = Locality.ToDictionary(kvp => kvp.Value, kvp => kvp.Key);
         Dictionary<string,int> Locality = new Dictionary<string, int>
         {
@@ -47,7 +49,7 @@ namespace JobFinder.Services
             { "Madeira", 15 }
         };
 
-        static public string current_job_XPath = "//div[@class='job-item media']";
+        static public string current_job_XPath = "//div[@class='block borderless']";
 
         static public string special_offer = "//div[@class='block borderless promoted']";
 
@@ -61,9 +63,13 @@ namespace JobFinder.Services
                 ? $"https://www.itjobs.pt/emprego?q={searchTerm}"
                 : $"https://www.itjobs.pt/emprego?q={searchTerm}&location={Locality[processed_city]}";
 
-            HtmlWeb web = new HtmlWeb();
+            JSON_Name = processed_city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
 
-            HtmlAgilityPack.HtmlDocument document = web.Load(url);
+            HtmlWeb client = new HtmlWeb();
+
+            client.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";
+
+            HtmlAgilityPack.HtmlDocument document = client.Load(url);
 
             Optimized_Page_Scrapper(ref document, url, element: current_job_XPath);
 
@@ -72,12 +78,13 @@ namespace JobFinder.Services
 
         public bool Optimized_Page_Scrapper(ref HtmlAgilityPack.HtmlDocument document, string url, string element)
         {
-            int page_index;
-            bool final_page = false;
+            int page_index=1;
 
             HtmlNode number1_offer = document.DocumentNode.SelectSingleNode(special_offer);
 
-            if(number1_offer != null)
+            //its made with a different structure from everything else and it only appears once , so its easier to just out of hand scrape it
+            #region special_offer
+            if (number1_offer != null)
             {
                 Job current_job = new Job();
 
@@ -113,23 +120,86 @@ namespace JobFinder.Services
                     : "";
 
                 current_job.Salary = null; //there isnt a salary description on the page
+
+                job_list.Add(current_job);
+            }
+            #endregion special_offer
+
+            HtmlNodeCollection element_list;
+            element_list = document.DocumentNode.SelectNodes(current_job_XPath);
+
+            while (true)
+            {
+
+                foreach(var html_element in element_list)
+                {
+                    Job current_job = new Job();
+
+                    var titleNode = html_element!.SelectSingleNode(".//a[@class='title']");
+                    current_job.Title = titleNode != null ? HtmlEntity.DeEntitize(titleNode.InnerText) : "";
+
+                    var companyNode = html_element.SelectSingleNode(".//div[@class='list-name']").SelectSingleNode(".//a");
+                    current_job.Company = companyNode != null ? HtmlEntity.DeEntitize(companyNode.InnerText) : "";
+
+                    var locationNode = html_element.SelectSingleNode(".//div[@class='list-details']");
+                    if (locationNode != null)
+                    {
+                        string locationText = HtmlEntity.DeEntitize(locationNode.InnerText);
+                        locationText = locationText.Replace("\n", " ").Replace("\r", " ").Replace("\t", " ");
+                        locationText = System.Text.RegularExpressions.Regex.Replace(locationText, @"\s+", " ").Trim();
+
+                        List<string> foundCities = new();
+                        foreach (var city in Locality.Keys)
+                        {
+                            if (locationText.Contains(city, StringComparison.OrdinalIgnoreCase))
+                            {
+                                foundCities.Add(city);
+                            }
+                        }
+
+                        locationText = locationText.Replace("Full-time", "");
+
+                        current_job.Location = foundCities.Count > 0 ? string.Join(", ", foundCities) : locationText;
+                    }
+
+                    current_job.Url = titleNode != null && titleNode.Attributes["href"] != null
+                        ? HtmlEntity.DeEntitize(titleNode.Attributes["href"].Value)
+                        : "";
+
+                    current_job.Salary = null; //there isnt a salary description on the page
+
+                    job_list.Add(current_job);
+                }
+
+                element_list = Optimized_Page_Turner( url, page_index);
+
+                if(element_list == null)
+                {
+                    string complete_path = PROJECT_Directory + @"\JobFinder\DB\" + "IT_" + JSON_Name;
+                    //TODO: Save the json , i should organize via {search_term}_{city}.json EXEMPLE: ".NET_Lisboa.json", i should also replace all spaces with underscores
+                    using (StreamWriter swriter = new StreamWriter(complete_path))
+                    {
+                        //System.Text.Json.Serialization.Metadata.JsonTypeInfo js = new System.Text.Json.Serialization.Metadata.JsonTypeInfo() { };
+                        swriter.Write(System.Text.Json.JsonSerializer.Serialize(value: job_list));
+                    }
+                    break;
+                }
+                page_index++;
             }
 
-            //HtmlAgilityPack.HtmlNodeCollection element_list;
-            //while (final_page)
-            //{
-            //    element_list = document.DocumentNode.SelectNodes(current_job_XPath);
-
-
-            //    foreach(HtmlNode html_element in element_list)
-            //    {
-
-            //    }
-
-            //}
-
-
             return false;
+        }
+
+        public HtmlNodeCollection Optimized_Page_Turner( string url, int page_index)
+        {
+            HtmlWeb client = new();
+
+            string full_url = url + $"&page={page_index+1}";
+            HtmlAgilityPack.HtmlDocument document = client.Load(full_url);
+
+            var jobs = document.DocumentNode.SelectNodes(current_job_XPath);
+
+            return jobs;
         }
     }
 }

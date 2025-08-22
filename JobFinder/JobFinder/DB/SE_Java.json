@@ -1,1 +1,92 @@
-[{"offer_name":"Backend Java Developer","company_name":"HumanIT Digital Consulting","location":"Aveiro","link":"https://emprego.sapo.pt/offers/backend-java-developer?id=dbbdd3c7-2b7d-4796-a714-e8620a24166a","remote_work":false,"job_description":"Hey humans, \n\nHow are you doing? We\u0027re excited to share some news that we believe will brighten your day.\n\nIn a world where many companies see employees as just numbers, we at HumanIT take a different approach. We celebrate the power of humans every ","company":null,"external_details":null},{"offer_name":"Senior Java Developer","company_name":"Olisipo","location":"Lisboa","link":"https://emprego.sapo.pt/offers/senior-java-developer?id=06360c4c-4d79-48ad-9354-7a078c215931","remote_work":false,"job_description":"Perfil:\n- Experi\u00EAncia comprovada em desenvolvimento backend com Java;\n- Bons conhecimentos na framework Spring Boot;\n- Experi\u00EAncia em bases de dados relacionais como Oracle s\u00E3o valorizados;\n- Boa capacidade de comunica\u00E7\u00E3o e trabalho em equipa;\n- Flu\u00EA","company":null,"external_details":null},{"offer_name":"Java Developer (fullstack)","company_name":"FYLD","location":"Lisboa","link":"https://emprego.sapo.pt/offers/java-developer-fullstack?id=a1a52a8a-a370-47a3-9b86-fe55aa468089","remote_work":false,"job_description":"We are looking for our next Java Developer (fullstack):\n\nBachelor\u2019s degree in Computer Science, Information Technology, Software Engineering, or a related;\nStrong proficiency in Java programming language and frameworks such as Spring, Spring Boot, Hi","company":null,"external_details":null},{"offer_name":"Arquiteto Java","company_name":"Dellent","location":"Lisboa","link":"https://emprego.sapo.pt/offers/arquiteto-java?id=565ad238-921f-4689-8667-58eb7c04619b","remote_work":false,"job_description":"A Dellent \u00E9 uma empresa de consultoria especializada em Sistemas de Informa\u00E7\u00E3o e Telecomunica\u00E7\u00F5es. O nosso objetivo \u00E9 conseguirmos ajudar os nossos consultores e candidatos a integrarem projetos que v\u00E3o ao encontro dos seus interesses, motiva\u00E7\u00F5es e e","company":null,"external_details":null},{"offer_name":"Java Developer","company_name":"Mind Source","location":"Lisboa","link":"https://emprego.sapo.pt/offers/java-developer?id=8e94c232-7ebf-4181-b615-821a897dff38","remote_work":false,"job_description":"Local: Porto / Lisboa / Braga / Coimbra (H\u00EDbrido)\n\nDescritivo da fun\u00E7\u00E3o:\n\nA Mind Source est\u00E1 a refor\u00E7ar a sua Equipa de Web \u0026 Mobile Apps, com um talento em densenvolvimento Java.\n\nPerfil:\n\n\u2022 Licenciatura em Engenharia Inform\u00E1tica ou equivalentes;\n\n\u2022","company":null,"external_details":null},{"offer_name":"Java Developer (French Speaker)","company_name":"FYLD","location":"Lisboa","link":"https://emprego.sapo.pt/offers/java-developer-french-speaker?id=07ac5ff2-f7f6-4874-a9b8-82c6497915e2","remote_work":false,"job_description":"We are looking for our next Java BE developer:\n\nBachelor\u2019s degree in Computer Science, Information Technology, Software Engineering, or a related;\nProven experience as a Java Back-End Developer or in a similar role;\nStrong proficiency in Java program","company":null,"external_details":null},{"offer_name":"Java Developer","company_name":"Noesis Portugal","location":"Viseu","link":"https://emprego.sapo.pt/offers/java-developer?id=5fe6b75a-c93d-4ac6-b040-33c5fd61838e","remote_work":false,"job_description":"Noesis is looking for candidates with the following profile:\n\n\n* Degree in Computer Science, Software Engineering, or a related field;\n* At least 4 years of experience in software development with Java (JSE and JEE);\n* Solid experience with Angular f","company":null,"external_details":null},{"offer_name":"Java Engineer Warrior","company_name":"TribeTech","location":"Lisboa","link":"https://emprego.sapo.pt/offers/java-engineer-warrior?id=0b0acdbc-ac34-4794-86d6-ada8b799ba5a","remote_work":false,"job_description":"Estamos \u00E0 procura de um(a) Consultor(a) Senior Java Engineer para se juntar \u00E0 nossa Tribo de Development!  \n\nAs compet\u00EAncias que procuramos em ti:\n-Experi\u00EAncia comprovada em aplica\u00E7\u00F5es Java de miss\u00E3o cr\u00EDtica, preferencialmente no setor banc\u00E1rio e fin","company":null,"external_details":null},{"offer_name":"Java - 1299","company_name":"Equa\u00E7\u00E3o IT","location":"Lisboa","link":"https://emprego.sapo.pt/offers/java-1299?id=0e08ed5f-eb79-446f-8e30-5c49d26e6e67","remote_work":false,"job_description":"Equa\u00E7\u00E3o IT is a company focused on boosting technology and solid solutions through our expert consultants leading a high perspective and adding value to our customers with the purpose of providing optimization and business growth to our partners.\n\nRe","company":null,"external_details":null}]
+[
+  {
+    "offer_name": "Backend Java Developer",
+    "company_name": "HumanIT Digital Consulting",
+    "location": "Aveiro",
+    "link": "https://emprego.sapo.pt/offers/backend-java-developer?id=dbbdd3c7-2b7d-4796-a714-e8620a24166a",
+    "remote_work": false,
+    "job_description": "Hey humans, \n\nHow are you doing? We\u0027re excited to share some news that we believe will brighten your day.\n\nIn a world where many companies see employees as just numbers, we at HumanIT take a different approach. We celebrate the power of humans every ",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Senior Java Developer",
+    "company_name": "Olisipo",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/senior-java-developer?id=06360c4c-4d79-48ad-9354-7a078c215931",
+    "remote_work": false,
+    "job_description": "Perfil:\n- Experi\u00EAncia comprovada em desenvolvimento backend com Java;\n- Bons conhecimentos na framework Spring Boot;\n- Experi\u00EAncia em bases de dados relacionais como Oracle s\u00E3o valorizados;\n- Boa capacidade de comunica\u00E7\u00E3o e trabalho em equipa;\n- Flu\u00EA",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java Developer (fullstack)",
+    "company_name": "FYLD",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/java-developer-fullstack?id=a1a52a8a-a370-47a3-9b86-fe55aa468089",
+    "remote_work": false,
+    "job_description": "We are looking for our next Java Developer (fullstack):\n\nBachelor\u2019s degree in Computer Science, Information Technology, Software Engineering, or a related;\nStrong proficiency in Java programming language and frameworks such as Spring, Spring Boot, Hi",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Arquiteto Java",
+    "company_name": "Dellent",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/arquiteto-java?id=565ad238-921f-4689-8667-58eb7c04619b",
+    "remote_work": false,
+    "job_description": "A Dellent \u00E9 uma empresa de consultoria especializada em Sistemas de Informa\u00E7\u00E3o e Telecomunica\u00E7\u00F5es. O nosso objetivo \u00E9 conseguirmos ajudar os nossos consultores e candidatos a integrarem projetos que v\u00E3o ao encontro dos seus interesses, motiva\u00E7\u00F5es e e",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java Developer",
+    "company_name": "Mind Source",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/java-developer?id=8e94c232-7ebf-4181-b615-821a897dff38",
+    "remote_work": false,
+    "job_description": "Local: Porto / Lisboa / Braga / Coimbra (H\u00EDbrido)\n\nDescritivo da fun\u00E7\u00E3o:\n\nA Mind Source est\u00E1 a refor\u00E7ar a sua Equipa de Web \u0026 Mobile Apps, com um talento em densenvolvimento Java.\n\nPerfil:\n\n\u2022 Licenciatura em Engenharia Inform\u00E1tica ou equivalentes;\n\n\u2022",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java Developer (French Speaker)",
+    "company_name": "FYLD",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/java-developer-french-speaker?id=07ac5ff2-f7f6-4874-a9b8-82c6497915e2",
+    "remote_work": false,
+    "job_description": "We are looking for our next Java BE developer:\n\nBachelor\u2019s degree in Computer Science, Information Technology, Software Engineering, or a related;\nProven experience as a Java Back-End Developer or in a similar role;\nStrong proficiency in Java program",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java Developer",
+    "company_name": "Noesis Portugal",
+    "location": "Viseu",
+    "link": "https://emprego.sapo.pt/offers/java-developer?id=5fe6b75a-c93d-4ac6-b040-33c5fd61838e",
+    "remote_work": false,
+    "job_description": "Noesis is looking for candidates with the following profile:\n\n\n* Degree in Computer Science, Software Engineering, or a related field;\n* At least 4 years of experience in software development with Java (JSE and JEE);\n* Solid experience with Angular f",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java Engineer Warrior",
+    "company_name": "TribeTech",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/java-engineer-warrior?id=0b0acdbc-ac34-4794-86d6-ada8b799ba5a",
+    "remote_work": false,
+    "job_description": "Estamos \u00E0 procura de um(a) Consultor(a) Senior Java Engineer para se juntar \u00E0 nossa Tribo de Development!  \n\nAs compet\u00EAncias que procuramos em ti:\n-Experi\u00EAncia comprovada em aplica\u00E7\u00F5es Java de miss\u00E3o cr\u00EDtica, preferencialmente no setor banc\u00E1rio e fin",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java - 1299",
+    "company_name": "Equa\u00E7\u00E3o IT",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/java-1299?id=0e08ed5f-eb79-446f-8e30-5c49d26e6e67",
+    "remote_work": false,
+    "job_description": "Equa\u00E7\u00E3o IT is a company focused on boosting technology and solid solutions through our expert consultants leading a high perspective and adding value to our customers with the purpose of providing optimization and business growth to our partners.\n\nRe",
+    "company": null,
+    "external_details": null
+  }
+]

@@ -95,6 +95,7 @@ namespace JobFinder.Services
         {
             string processed_searchTerm = search_term.Trim().Replace(' ', '_');
             string processed_city = city.Trim().Replace(' ', '_');
+            processed_city = char.ToUpper(processed_city[0]) + processed_city.Substring(1).ToLower();
             JSON_Name = city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
 
 
@@ -106,7 +107,7 @@ namespace JobFinder.Services
             //$"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia";
             string url = city == ""
                 ? $"https://emprego.sapo.pt/offers?&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia"
-                : $"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia";
+                : $"https://emprego.sapo.pt/offers?local={city}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia";
 
             using var client = new HttpClient(handler);
             #region headers

@@ -73,11 +73,14 @@ namespace JobFinder
         {
             SapoEmprego sapoEmprego = new SapoEmprego();
             NetEmprego netEmprego = new NetEmprego();
+            ITJobs itJobs = new();
+
             //netEmprego.Search(search_term: ".NET", city: "Porto");
             //SapoEmprego.Search(search_term: ".NET", city: "Porto");
             //netEmprego.Optimized_Search(search_term: "Java", city: "Lisboa");
             //netEmprego.Optimized_Search(search_term: "Java");
-            sapoEmprego.Search(search_term: "Java");
+            //sapoEmprego.Search(search_term: "Java");
+            itJobs.Optimized_Search(searchTerm: ".Net", city: "Porto");
         }
     }
 }

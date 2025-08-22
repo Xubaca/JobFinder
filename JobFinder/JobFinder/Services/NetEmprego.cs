@@ -89,7 +89,7 @@ namespace JobFinder.Services
 
             if (city != "")
             {
-                city = char.ToUpper(city[0]) + city.Substring(1);
+                city = char.ToUpper(city[0]) + city.Substring(1).ToLower();
                 zone = regiao[city];
             }
 
@@ -111,7 +111,7 @@ namespace JobFinder.Services
             int page_index = 1;
             bool final_page = false;
 
-            while (true)
+            while (final_page)
             {
                 HtmlNodeCollection elementList;
                 elementList = document.DocumentNode.SelectNodes(current_job_XPath);

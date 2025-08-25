@@ -20,12 +20,12 @@
     "external_details": null
   },
   {
-    "offer_name": "Java Developer (fullstack)",
-    "company_name": "FYLD",
+    "offer_name": "Java Developer",
+    "company_name": "Mind Source",
     "location": "Lisboa",
-    "link": "https://emprego.sapo.pt/offers/java-developer-fullstack?id=a1a52a8a-a370-47a3-9b86-fe55aa468089",
+    "link": "https://emprego.sapo.pt/offers/java-developer?id=8e94c232-7ebf-4181-b615-821a897dff38",
     "remote_work": false,
-    "job_description": "We are looking for our next Java Developer (fullstack):\n\nBachelor\u2019s degree in Computer Science, Information Technology, Software Engineering, or a related;\nStrong proficiency in Java programming language and frameworks such as Spring, Spring Boot, Hi",
+    "job_description": "Local: Porto / Lisboa / Braga / Coimbra (H\u00EDbrido)\n\nDescritivo da fun\u00E7\u00E3o:\n\nA Mind Source est\u00E1 a refor\u00E7ar a sua Equipa de Web \u0026 Mobile Apps, com um talento em densenvolvimento Java.\n\nPerfil:\n\n\u2022 Licenciatura em Engenharia Inform\u00E1tica ou equivalentes;\n\n\u2022",
     "company": null,
     "external_details": null
   },
@@ -40,32 +40,12 @@
     "external_details": null
   },
   {
-    "offer_name": "Java Developer",
-    "company_name": "Mind Source",
-    "location": "Lisboa",
-    "link": "https://emprego.sapo.pt/offers/java-developer?id=8e94c232-7ebf-4181-b615-821a897dff38",
+    "offer_name": "Java Developer (Porto-H\u00EDbrido)",
+    "company_name": "IGNIT Tech",
+    "location": "Porto",
+    "link": "https://emprego.sapo.pt/offers/java-developer-porto-hibrido?id=cda9c2fc-ccde-4953-a02f-a44e03c7e2fc",
     "remote_work": false,
-    "job_description": "Local: Porto / Lisboa / Braga / Coimbra (H\u00EDbrido)\n\nDescritivo da fun\u00E7\u00E3o:\n\nA Mind Source est\u00E1 a refor\u00E7ar a sua Equipa de Web \u0026 Mobile Apps, com um talento em densenvolvimento Java.\n\nPerfil:\n\n\u2022 Licenciatura em Engenharia Inform\u00E1tica ou equivalentes;\n\n\u2022",
-    "company": null,
-    "external_details": null
-  },
-  {
-    "offer_name": "Java Developer (French Speaker)",
-    "company_name": "FYLD",
-    "location": "Lisboa",
-    "link": "https://emprego.sapo.pt/offers/java-developer-french-speaker?id=07ac5ff2-f7f6-4874-a9b8-82c6497915e2",
-    "remote_work": false,
-    "job_description": "We are looking for our next Java BE developer:\n\nBachelor\u2019s degree in Computer Science, Information Technology, Software Engineering, or a related;\nProven experience as a Java Back-End Developer or in a similar role;\nStrong proficiency in Java program",
-    "company": null,
-    "external_details": null
-  },
-  {
-    "offer_name": "Java Developer",
-    "company_name": "Noesis Portugal",
-    "location": "Viseu",
-    "link": "https://emprego.sapo.pt/offers/java-developer?id=5fe6b75a-c93d-4ac6-b040-33c5fd61838e",
-    "remote_work": false,
-    "job_description": "Noesis is looking for candidates with the following profile:\n\n\n* Degree in Computer Science, Software Engineering, or a related field;\n* At least 4 years of experience in software development with Java (JSE and JEE);\n* Solid experience with Angular f",
+    "job_description": "Procuramos um Java Developer para integrar a equipa de um cliente no Porto.\nSe tens vontade de enriquecer o teu percurso profissional nesta \u00E1rea e procuras uma empresa que aposta na tua carreira, vem conhecer-nos e envia o teu CV\n\nRequirements\n- Form",
     "company": null,
     "external_details": null
   },
@@ -86,6 +66,26 @@
     "link": "https://emprego.sapo.pt/offers/java-1299?id=0e08ed5f-eb79-446f-8e30-5c49d26e6e67",
     "remote_work": false,
     "job_description": "Equa\u00E7\u00E3o IT is a company focused on boosting technology and solid solutions through our expert consultants leading a high perspective and adding value to our customers with the purpose of providing optimization and business growth to our partners.\n\nRe",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Java Fullstack Developer",
+    "company_name": "Dellent",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/java-fullstack-developer?id=feb360f4-8a3e-42a1-b64c-3d043370ed41",
+    "remote_work": false,
+    "job_description": "A Dellent \u00E9 uma empresa de consultoria especializada em Sistemas de Informa\u00E7\u00E3o e Telecomunica\u00E7\u00F5es. O nosso objetivo \u00E9 conseguirmos ajudar os nossos consultores e candidatos a integrarem projetos que v\u00E3o ao encontro dos seus interesses, motiva\u00E7\u00F5es e e",
+    "company": null,
+    "external_details": null
+  },
+  {
+    "offer_name": "Senior Java Developer",
+    "company_name": "Rumos Consulting",
+    "location": "Lisboa",
+    "link": "https://emprego.sapo.pt/offers/senior-java-developer?id=877ba539-11fb-483e-82ee-6baf31250f6e",
+    "remote_work": false,
+    "job_description": "Na sequ\u00EAncia do crescimento da nossa equipa recrutamos:\nSenior Java Developer\n\nPerfil:\n- Forma\u00E7\u00E3o superior na \u00E1rea das Tecnologias de Informa\u00E7\u00E3o;\n- Experi\u00EAncia profissional superior a 4 anos em desenvolvimento Java (Java 8\u002B);\n- Experi\u00EAncia comprovada",
     "company": null,
     "external_details": null
   }

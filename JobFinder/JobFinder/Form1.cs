@@ -76,11 +76,12 @@ namespace JobFinder
             ITJobs itJobs = new();
 
             //netEmprego.Search(search_term: ".NET", city: "Porto");
-            //SapoEmprego.Search(search_term: ".NET", city: "Porto");
+            //sapoEmprego.Search(search_term: ".NET", city: "Porto");
+            sapoEmprego.Search(search_term: "Java");
             //netEmprego.Optimized_Search(search_term: "Java", city: "Lisboa");
             //netEmprego.Optimized_Search(search_term: "Java");
             //sapoEmprego.Search(search_term: "Java");
-            itJobs.Optimized_Search(searchTerm: ".Net", city: "Porto");
+            //itJobs.Optimized_Search(searchTerm: ".Net", city: "Porto");
         }
     }
 }

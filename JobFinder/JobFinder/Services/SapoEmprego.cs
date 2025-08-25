@@ -12,6 +12,7 @@ using OpenQA.Selenium.Internal;
 using JobFinder.Model;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Net;
 
 namespace JobFinder.Services
 {
@@ -27,11 +28,11 @@ namespace JobFinder.Services
 
         public List<Job> job_list = new List<Job>();
 
-        static /*public*/ int page_counter = 1;
+        public int page_counter = 2;
 
         public string JSON_Name = "";
 
-        static public void PageIncremet() => page_counter += 1;
+        public void PageIncremet() => page_counter += 1;
 
         //Job oferring json DTO(data transfer object)
         #region JobOffer_DTO
@@ -89,13 +90,13 @@ namespace JobFinder.Services
             public string? Description { get; set; }
         }
         #endregion JobOffer_DTO
-        static public void ResetPageCounter() => page_counter = 1;
+        public void ResetPageCounter() => page_counter = 1;
 
         public void Search(string search_term, string city="")
         {
             string processed_searchTerm = search_term.Trim().Replace(' ', '_');
             string processed_city = city.Trim().Replace(' ', '_');
-            processed_city = char.ToUpper(processed_city[0]) + processed_city.Substring(1).ToLower();
+            if(city!="")processed_city = char.ToUpper(processed_city[0]) + processed_city.Substring(1).ToLower();
             JSON_Name = city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
 
 
@@ -140,48 +141,80 @@ namespace JobFinder.Services
             #endregion
 
             // Send and read response
-            HttpResponseMessage? response = client.Send(request);
-            string body;
-            Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
-            read_body.Wait();
-            body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
+            //HttpResponseMessage? response = client.Send(request);
+            //string body;
+            //Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
+            //read_body.Wait();
+            //body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
 
-            //Console.WriteLine($"Status: {response.StatusCode}");
-            //Console.WriteLine(body);
+            ////Console.WriteLine($"Status: {response.StatusCode}");
+            ////Console.WriteLine(body);
 
-            JsonSerializerOptions options = new JsonSerializerOptions()
-            {
-                PropertyNameCaseInsensitive = true
-            };
+            //JsonSerializerOptions options = new JsonSerializerOptions()
+            //{
+            //    PropertyNameCaseInsensitive = true
+            //};
 
 
-            SapoEmpregoRoot? root = JsonSerializer.Deserialize<SapoEmpregoRoot>(body, options);
-            List<offers> result = root?.Offers ?? new List<offers>();
-            // Agora 'result' contém a lista de ofertas, com campos opcionais tratados
+            //SapoEmpregoRoot? root = JsonSerializer.Deserialize<SapoEmpregoRoot>(body, options);
+            //List<offers> result = root?.Offers ?? new List<offers>();
+            //// Agora 'result' contém a lista de ofertas, com campos opcionais tratados
 
-            JsonSave(JsonSerializer.Serialize(result.Where(x => x.Company == null)));
+            //JsonSave(JsonSerializer.Serialize(result.Where(x => x.Company == null)));
 
-            Task.WaitAll();
-            //MessageBox.Show(body);
-            if (response.StatusCode == System.Net.HttpStatusCode.OK) SapoEmprego.PageIncremet();
+            //Task.WaitAll();
+            ////MessageBox.Show(body);
+            //if (response.StatusCode == System.Net.HttpStatusCode.OK) PageIncremet();
+
+            Optimized_Page_Scrapper(client, ref request, url);
 
             //return response.StatusCode == System.Net.HttpStatusCode.OK ? body : "Error";
         }
 
-        //public bool Optimized_Page_Scrapper(ref HttpClient? client , ref HttpRequestMessage? request, string url)
-        //{
-        //    //first Request
-        //    HttpResponseMessage? response = client.Send(request);
-        //    do
-        //    {
-        //        string body;
-        //        Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
-        //        read_body.Wait();
-        //    } 
-        //    while (response.StatusCode == System.Net.HttpStatusCode.OK);
+        public bool Optimized_Page_Scrapper(HttpClient client,ref HttpRequestMessage? request, string url)
+        {
+            //HttpRequestMessage? request = new();
+            HttpResponseMessage? response = new();
+            List<offers> result = new();
+            do
+            {
 
-        //    return true;
-        //}
+                using var newRequest = new HttpRequestMessage(HttpMethod.Get, request.RequestUri);
+                string currentURL = url + $"&page={this.page_counter}";
+                newRequest.Headers.Referrer = new Uri(currentURL);
+                // Copy other headers from the original request if needed
+                response = client.Send(newRequest);
+                
+                //request.Headers.Referrer = new Uri(url + $"&page={this.page_counter}");
+                //response = client.Send(request);
+
+
+                Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
+                read_body.Wait();
+                string body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
+
+                JsonSerializerOptions options = new JsonSerializerOptions()
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+
+                SapoEmpregoRoot? root = JsonSerializer.Deserialize<SapoEmpregoRoot>(body, options);
+                List<offers> tempresult = root?.Offers ?? new List<offers>();
+                // Agora 'result' contém a lista de ofertas, com campos opcionais tratados
+                if (tempresult.Count == 0) break;
+
+                Task.WaitAll();
+                result.AddRange(tempresult);
+                this.PageIncremet();
+
+            } while (response.StatusCode == System.Net.HttpStatusCode.OK);
+            JsonSave(JsonSerializer.Serialize(result.Where(x => x.Company == null)));
+
+            return true;
+        }
+
+
 
         public bool JsonSave(string body)
         {

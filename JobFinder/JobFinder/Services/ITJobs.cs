@@ -53,15 +53,15 @@ namespace JobFinder.Services
 
         static public string special_offer = "//div[@class='block borderless promoted']";
 
-        public bool Optimized_Search(string searchTerm , string city)
+        public bool Optimized_Search(string search_term, string city)
         {
-            string processed_searchTerm = searchTerm.Trim().Replace(' ', '+');
+            string processed_searchTerm = search_term.Trim().Replace(' ', '+');
             city = city.Trim();
             string processed_city = char.ToUpper(city[0]) + city.Substring(1).ToLower();
 
             string url = city == ""
-                ? $"https://www.itjobs.pt/emprego?q={searchTerm}"
-                : $"https://www.itjobs.pt/emprego?q={searchTerm}&location={Locality[processed_city]}";
+                ? $"https://www.itjobs.pt/emprego?q={search_term}"
+                : $"https://www.itjobs.pt/emprego?q={search_term}&location={Locality[processed_city]}";
 
             JSON_Name = processed_city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
 

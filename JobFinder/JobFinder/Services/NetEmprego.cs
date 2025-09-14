@@ -111,7 +111,7 @@ namespace JobFinder.Services
             int page_index = 1;
             bool final_page = false;
 
-            while (final_page)
+            while (true)
             {
                 HtmlNodeCollection elementList;
                 elementList = document.DocumentNode.SelectNodes(current_job_XPath);

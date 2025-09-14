@@ -13,6 +13,7 @@ using JobFinder.Model;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Net;
+using OpenQA.Selenium.BiDi.Network;
 
 namespace JobFinder.Services
 {
@@ -28,7 +29,7 @@ namespace JobFinder.Services
 
         public List<Job> job_list = new List<Job>();
 
-        public int page_counter = 2;
+        public int page_counter = 1;
 
         public string JSON_Name = "";
 
@@ -110,94 +111,86 @@ namespace JobFinder.Services
                 ? $"https://emprego.sapo.pt/offers?&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia"
                 : $"https://emprego.sapo.pt/offers?local={city}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia";
 
-            using var client = new HttpClient(handler);
-            #region headers
-            var request = new HttpRequestMessage(HttpMethod.Get, $"https://emprego.sapo.pt/offers/search?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia");
-            // Add all required headers
-            request.Headers.Accept.ParseAdd("application/json, text/plain, */*");
-            request.Headers.Add("accept-language", "en-US,en;q=0.6");
-            request.Headers.Add("cache-control", "no-cache");
-            request.Headers.Add("pragma", "no-cache");
-            request.Headers.Add("priority", "u=1, i");
-            request.Headers.Referrer = new Uri(url);
-            request.Headers.Add("sec-ch-ua", "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Brave\";v=\"138\"");
-            request.Headers.Add("sec-ch-ua-mobile", "?0");
-            request.Headers.Add("sec-ch-ua-platform", "\"Windows\"");
-            request.Headers.Add("sec-fetch-dest", "empty");
-            request.Headers.Add("sec-fetch-mode", "cors");
-            request.Headers.Add("sec-fetch-site", "same-origin");
-            request.Headers.Add("sec-gpc", "1");
-            request.Headers.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36");
-            request.Headers.Add("x-csrf-token", "waBxhdkCGq4lraQKYZfHSUSnd4Weya54wikrDjV0");
-            request.Headers.Add("x-requested-with", "XMLHttpRequest");
-            request.Headers.Add("x-xsrf-token", "eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0=");
-
-            // Add Cookie header manually (since auto cookie handler is off)
-            request.Headers.Add("Cookie",
-                "se_ro=eyJpdiI6ImEwWEtObVZmSDZZSTRES0NzRXJGZUE9PSIsInZhbHVlIjoiNWdweE41eVA4R2x3VHdHNDZiK05GUUFmdnV1ZC9OYjNYMEtoUnhQRDVuOHBIbmRVaTVLdUk1YVVTaHlQc0FEQVdrWFI3TnpVZ2NlR2N3eVNYYXhsQUIySDExTVk1RVlLR2NCVUVSZmJQRmN6cTlxeFpPaUs0UmZ0Unp0ZW9iZWxpc0s0WFFLR1BLL2ppRGJtVDdCWVFTK3dZV0xtUGJxZlBaTHkzcFpqZ0p4Z1VYVHhuS1h2cS9MSW0reDVabDhQUFEzbXVTNE42QmhYVTNuSUtYYUlkODVMbE5jSUExOVdDdDNIQy9RMnI1K1FoV2V6dU8xcE5TOC84WVMvT3NsQUxVZmZvNGpWbCt3VmR1QkpWVDFzUWFMd2tMOFN1dzBaUTNXU1dkMjl6S21YRTlvL294ZDZwYWZzalpRcUlBaXMiLCJtYWMiOiJjM2JjMzljOGZjODM2ZWRkNjlkOWRjMGRjYmJlZmJkMWFlZjIyZDFiNDE4ZmIyYTgzMmVmNzQ2NzYwNDBlNzgzIiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0%3D; sapo_emprego_session=eyJpdiI6IjgvbVRkT25CWDB3VEo4WGU2bTM3SGc9PSIsInZhbHVlIjoiMzF5ZDNZLy9YNi9EZUREVlQvZEdMSVJkUnhKTUJmSGJUQWRqMDZCcnlvL2R3T1BsZkdQR1A3TmhmRE92YTM0a0Vmb2w5QlM5UnZDVytwV2JqM0JQMEpDRkpnQUgybnd1dURvRUlzZ0lXUlo4dEorQnAwY1RweStBUGNpNkpPRnAiLCJtYWMiOiJjYzQ1ODE5MDY4YThhZjM2YjljZTdjNjFiNTI5ZTA2MTI1MzkyZDA4NmExNDA1MTFlZmQyYjRkMmRlYzIzNDZhIiwidGFnIjoiIn0%3D " +
-                "XSRF-TOKEN=eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0; " +
-                "sapo_emprego_session=waBxhdkCGq4lraQKYZfHSUSnd4Weya54wikrDjV0"
-            );
-            #endregion
-
-            // Send and read response
-            //HttpResponseMessage? response = client.Send(request);
-            //string body;
-            //Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
-            //read_body.Wait();
-            //body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
-
-            ////Console.WriteLine($"Status: {response.StatusCode}");
-            ////Console.WriteLine(body);
-
-            //JsonSerializerOptions options = new JsonSerializerOptions()
-            //{
-            //    PropertyNameCaseInsensitive = true
-            //};
-
-
-            //SapoEmpregoRoot? root = JsonSerializer.Deserialize<SapoEmpregoRoot>(body, options);
-            //List<offers> result = root?.Offers ?? new List<offers>();
-            //// Agora 'result' contém a lista de ofertas, com campos opcionais tratados
-
-            //JsonSave(JsonSerializer.Serialize(result.Where(x => x.Company == null)));
-
-            //Task.WaitAll();
-            ////MessageBox.Show(body);
-            //if (response.StatusCode == System.Net.HttpStatusCode.OK) PageIncremet();
-
-            Optimized_Page_Scrapper(client, ref request, url);
+            
+            Optimized_Page_Scrapper(url, search_term, city);
 
             //return response.StatusCode == System.Net.HttpStatusCode.OK ? body : "Error";
         }
 
-        public bool Optimized_Page_Scrapper(HttpClient client,ref HttpRequestMessage? request, string url)
+        public bool Optimized_Page_Scrapper( string x_url, string search_term, string city)
         {
             //HttpRequestMessage? request = new();
-            HttpResponseMessage? response = new();
+            //HttpResponseMessage? response = new();
             List<offers> result = new();
             do
             {
 
-                using var newRequest = new HttpRequestMessage(HttpMethod.Get, request.RequestUri);
-                string currentURL = url + $"&page={this.page_counter}";
-                newRequest.Headers.Referrer = new Uri(currentURL);
-                // Copy other headers from the original request if needed
-                response = client.Send(newRequest);
-                
+                string processed_searchTerm = search_term.Trim().Replace(' ', '_');
+                string processed_city = city.Trim().Replace(' ', '_');
+                if (city != "") processed_city = char.ToUpper(processed_city[0]) + processed_city.Substring(1).ToLower();
+                JSON_Name = city != "" ? processed_searchTerm + '_' + processed_city + ".json" : processed_searchTerm + ".json";
+
+
+                var handler = new HttpClientHandler
+                {
+                    UseCookies = false // We'll set manual Cookie header
+                };
+
+                //$"https://emprego.sapo.pt/offers?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia";
+                string url = city == ""
+                    ? $"https://emprego.sapo.pt/offers?&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia"
+                    : $"https://emprego.sapo.pt/offers?local={city}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&ordem=relevancia";
+
+                using var client = new HttpClient(handler);
+                #region headers
+                var request = new HttpRequestMessage(HttpMethod.Get, $"https://emprego.sapo.pt/offers/search?local={city.ToLower()}&categoria=informatica-tecnologias&pesquisa={search_term.ToLower()}&pagina={page_counter}&ordem=relevancia");
+                // Add all required headers
+                request.Headers.Accept.ParseAdd("application/json, text/plain, */*");
+                request.Headers.Add("accept-language", "en-US,en;q=0.6");
+                request.Headers.Add("cache-control", "no-cache");
+                request.Headers.Add("pragma", "no-cache");
+                request.Headers.Add("priority", "u=1, i");
+                request.Headers.Referrer = new Uri(url);
+                request.Headers.Add("sec-ch-ua", "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Brave\";v=\"138\"");
+                request.Headers.Add("sec-ch-ua-mobile", "?0");
+                request.Headers.Add("sec-ch-ua-platform", "\"Windows\"");
+                request.Headers.Add("sec-fetch-dest", "empty");
+                request.Headers.Add("sec-fetch-mode", "cors");
+                request.Headers.Add("sec-fetch-site", "same-origin");
+                request.Headers.Add("sec-gpc", "1");
+                request.Headers.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36");
+                request.Headers.Add("x-csrf-token", "waBxhdkCGq4lraQKYZfHSUSnd4Weya54wikrDjV0");
+                request.Headers.Add("x-requested-with", "XMLHttpRequest");
+                request.Headers.Add("x-xsrf-token", "eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0=");
+
+                // Add Cookie header manually (since auto cookie handler is off)
+                request.Headers.Add("Cookie",
+                    "se_ro=eyJpdiI6ImEwWEtObVZmSDZZSTRES0NzRXJGZUE9PSIsInZhbHVlIjoiNWdweE41eVA4R2x3VHdHNDZiK05GUUFmdnV1ZC9OYjNYMEtoUnhQRDVuOHBIbmRVaTVLdUk1YVVTaHlQc0FEQVdrWFI3TnpVZ2NlR2N3eVNYYXhsQUIySDExTVk1RVlLR2NCVUVSZmJQRmN6cTlxeFpPaUs0UmZ0Unp0ZW9iZWxpc0s0WFFLR1BLL2ppRGJtVDdCWVFTK3dZV0xtUGJxZlBaTHkzcFpqZ0p4Z1VYVHhuS1h2cS9MSW0reDVabDhQUFEzbXVTNE42QmhYVTNuSUtYYUlkODVMbE5jSUExOVdDdDNIQy9RMnI1K1FoV2V6dU8xcE5TOC84WVMvT3NsQUxVZmZvNGpWbCt3VmR1QkpWVDFzUWFMd2tMOFN1dzBaUTNXU1dkMjl6S21YRTlvL294ZDZwYWZzalpRcUlBaXMiLCJtYWMiOiJjM2JjMzljOGZjODM2ZWRkNjlkOWRjMGRjYmJlZmJkMWFlZjIyZDFiNDE4ZmIyYTgzMmVmNzQ2NzYwNDBlNzgzIiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0%3D; sapo_emprego_session=eyJpdiI6IjgvbVRkT25CWDB3VEo4WGU2bTM3SGc9PSIsInZhbHVlIjoiMzF5ZDNZLy9YNi9EZUREVlQvZEdMSVJkUnhKTUJmSGJUQWRqMDZCcnlvL2R3T1BsZkdQR1A3TmhmRE92YTM0a0Vmb2w5QlM5UnZDVytwV2JqM0JQMEpDRkpnQUgybnd1dURvRUlzZ0lXUlo4dEorQnAwY1RweStBUGNpNkpPRnAiLCJtYWMiOiJjYzQ1ODE5MDY4YThhZjM2YjljZTdjNjFiNTI5ZTA2MTI1MzkyZDA4NmExNDA1MTFlZmQyYjRkMmRlYzIzNDZhIiwidGFnIjoiIn0%3D " +
+                    "XSRF-TOKEN=eyJpdiI6Ikpzc0ZqTFdTdEJYTlk1cHQyYy9SZ1E9PSIsInZhbHVlIjoiWWVvWTdKaWNUbTZVRldQVkFIRE5sTXFWM2RrYUZuRkpneGxUUXF3RWdwdFhLdjR3U2lWdUdsWDhJQ1dUYUIwa2NvV2IvQmowSUNKbm4wZ2VncEFVZFc1UGMxYlV4cll3NWlzK3F4YWZ5UGhGblYxUkRyTnllSnY4SGliYk9lbC8iLCJtYWMiOiIyMGJmZWZiYWU1YWZlMDY2ODExMWIwMTJjYjAyMDY4MDlmMWMwN2U1NTNiMWJmOThlODI0MjNmZGI1NGViNzU5IiwidGFnIjoiIn0; " +
+                    "sapo_emprego_session=waBxhdkCGq4lraQKYZfHSUSnd4Weya54wikrDjV0"
+                );
+                #endregion
+
+                //Send and read response
+                HttpResponseMessage? response = client.Send(request);
+                string body;
+                Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
+                read_body.Wait();
+                body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
+                if (body == null || body == "" || body == "[]") break;
                 //request.Headers.Referrer = new Uri(url + $"&page={this.page_counter}");
                 //response = client.Send(request);
 
 
-                Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
-                read_body.Wait();
-                string body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
+                //Task<string?> read_body = Task.Factory.StartNew<string?>(() => response.Content.ReadAsStringAsync().Result);
+                //read_body.Wait();
+                //string body = read_body.Status == TaskStatus.RanToCompletion ? read_body.Result! : "";
 
                 JsonSerializerOptions options = new JsonSerializerOptions()
                 {
                     PropertyNameCaseInsensitive = true
                 };
-
+                page_counter++;
 
                 SapoEmpregoRoot? root = JsonSerializer.Deserialize<SapoEmpregoRoot>(body, options);
                 List<offers> tempresult = root?.Offers ?? new List<offers>();
@@ -208,7 +201,7 @@ namespace JobFinder.Services
                 result.AddRange(tempresult);
                 this.PageIncremet();
 
-            } while (response.StatusCode == System.Net.HttpStatusCode.OK);
+            } while (/*response.StatusCode == System.Net.HttpStatusCode.OK*/true);
             JsonSave(JsonSerializer.Serialize(result.Where(x => x.Company == null)));
 
             return true;

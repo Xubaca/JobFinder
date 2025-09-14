@@ -1,0 +1,470 @@
+[
+  {
+    "Title": "Java Backend Engineer",
+    "Company": "Neotalent Conclusion",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503901/java-backend-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Java Software Engineer",
+    "Company": "Neotalent Conclusion",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503896/senior-java-software-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Java BackEnd Developer",
+    "Company": "Neotalent Conclusion",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503864/java-backend-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Java Developer",
+    "Company": "Growmate",
+    "Location": "Porto",
+    "Url": "/oferta/503485/java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Software Engineer \u2013 Java Fullstack",
+    "Company": "GRiT Solutions",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/504022/software-engineer-java-fullstack",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Programador Java",
+    "Company": "Integer Consulting",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503915/programador-java",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "S\u00E9nior Java Developer",
+    "Company": "Bee Engineering",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503870/senior-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Tech Lead Java",
+    "Company": "KCS IT",
+    "Location": "Porto",
+    "Url": "/oferta/503799/tech-lead-java",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Fullstack Java/Angular",
+    "Company": "KCS IT",
+    "Location": "Porto",
+    "Url": "/oferta/503766/fullstack-java-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "JAVA Developer",
+    "Company": "KCS IT",
+    "Location": "Porto",
+    "Url": "/oferta/503764/java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "JAVA Developer",
+    "Company": "Outsoft",
+    "Location": "Porto, Aveiro, Viseu",
+    "Url": "/oferta/503711/java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Java Tech Lead",
+    "Company": "Cocus",
+    "Location": "Porto",
+    "Url": "/oferta/503527/java-tech-lead",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Java Spring Boot Senior Developer",
+    "Company": "ITSector - Sistemas de Informa\u00E7\u00E3o, SA",
+    "Location": "Lisboa, Braga, Aveiro, Castelo Branco, Bragan\u00E7a",
+    "Url": "/oferta/503419/java-spring-boot-senior-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Fullstack Developer (Java / Angular)",
+    "Company": "KWAN",
+    "Location": "Lisboa, Porto, Braga",
+    "Url": "/oferta/504214/fullstack-developer-java-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Full Stack Developer Java com Angular",
+    "Company": "agap2IT",
+    "Location": "Porto",
+    "Url": "/oferta/504311/full-stack-developer-java-com-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Junior Java Developer",
+    "Company": "KWAN",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/504176/junior-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Java Spring Backend Developer",
+    "Company": "Dellent",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503537/java-spring-backend-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Java Developer",
+    "Company": "QiBit Portugal",
+    "Location": "Porto",
+    "Url": "/oferta/504071/senior-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Spring (Java) Developer",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/503366/senior-spring-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Lead Java Developer",
+    "Company": "Dellent",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503325/lead-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Java Developer",
+    "Company": "KWAN",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503822/senior-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Fullstack Developer - Java \u0026 Angular",
+    "Company": "Growin - Know to grow",
+    "Location": "Lisboa, Porto, Braga, Aveiro",
+    "Url": "/oferta/503720/fullstack-developer-java-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Full-Stack Developer (Java and Angular)",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/502678/full-stack-developer-java-and-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Mid Fullstack developer (Java \u0026 Angular)",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/502480/mid-fullstack-developer-java-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Java/Angular Fullstack Developer",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/502357/senior-java-angular-fullstack-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Spring (Java) Developer",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/503333/senior-spring-java-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Data Engineer",
+    "Company": "GRiT Solutions",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/504341/data-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Backend Engineer",
+    "Company": "We Are Meta",
+    "Location": "Porto",
+    "Url": "/oferta/504425/backend-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Front end developer- Angular",
+    "Company": "KCS IT",
+    "Location": "Porto",
+    "Url": "/oferta/503985/front-end-developer-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Front end developer- Angular",
+    "Company": "KCS IT",
+    "Location": "Porto",
+    "Url": "/oferta/503850/front-end-developer-angular",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Quality Assurance Tester",
+    "Company": "Bee Engineering",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503860/quality-assurance-tester",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "DevOps",
+    "Company": "KCS IT",
+    "Location": "Porto",
+    "Url": "/oferta/503768/devops",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Rec\u00E9m-Licenciado / Mestre em Engenharia Inform\u00E1tica",
+    "Company": "Outsoft",
+    "Location": "Porto, Aveiro, Viseu",
+    "Url": "/oferta/503754/recem-licenciado-mestre-em-engenharia-informatica",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "AI Engineer",
+    "Company": "KWAN",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503531/ai-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "System Architect",
+    "Company": "Cocus",
+    "Location": "Porto",
+    "Url": "/oferta/503525/system-architect",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Test Automation Engineer",
+    "Company": "Noesis Portugal",
+    "Location": "Lisboa, Porto, Coimbra, Castelo Branco, Guarda",
+    "Url": "/oferta/503384/senior-test-automation-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Oracle APEX Developer",
+    "Company": "akapeople",
+    "Location": "Porto",
+    "Url": "/oferta/504368/oracle-apex-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Data Engineer (AWS)",
+    "Company": "Neotalent Conclusion",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503902/data-engineer-aws",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "AI-Enhanced Development Specialist",
+    "Company": "QiBit Portugal",
+    "Location": "Porto",
+    "Url": "/oferta/504070/ai-enhanced-development-specialist",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Android Developer",
+    "Company": "Ebankit - Omnichannel Innovation",
+    "Location": "Porto",
+    "Url": "/oferta/504081/android-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Data Engineer (GCP)",
+    "Company": "KWAN",
+    "Location": "Porto",
+    "Url": "/oferta/503982/data-engineer-gcp",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Reactive Quarkus Senior Developer",
+    "Company": "KWAN",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/503929/reactive-quarkus-senior-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Automation Framework Developer",
+    "Company": "Aubay",
+    "Location": "Porto",
+    "Url": "/oferta/503872/automation-framework-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Full-Stack Developer",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/503037/senior-full-stack-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Data Engineer",
+    "Company": "Growin - Know to grow",
+    "Location": "Lisboa, Porto, Braga, Aveiro",
+    "Url": "/oferta/503721/data-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Fullstack Developer",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/502567/fullstack-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Reactive Quarkus Senior Developer",
+    "Company": "Dellent",
+    "Location": "Lisboa, Porto",
+    "Url": "/oferta/502698/reactive-quarkus-senior-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "DevSecOps (French Speaker)",
+    "Company": "Dellent",
+    "Location": "Porto",
+    "Url": "/oferta/502679/devsecops-french-speaker",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "System Administrator Linux",
+    "Company": "Growin - Know to grow",
+    "Location": "Lisboa, Porto, Braga, Aveiro",
+    "Url": "/oferta/503586/system-administrator-linux",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Data Engineer w/ GCP",
+    "Company": "KWAN",
+    "Location": "Lisboa, Porto, Braga, Coimbra",
+    "Url": "/oferta/503534/data-engineer-w-gcp",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Senior Backend Developer",
+    "Company": "QiBit Portugal",
+    "Location": "Porto",
+    "Url": "/oferta/503404/senior-backend-developer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  },
+  {
+    "Title": "Test Automation Engineer",
+    "Company": "Noesis Portugal",
+    "Location": "Lisboa, Porto, Coimbra, Castelo Branco, Guarda",
+    "Url": "/oferta/503394/test-automation-engineer",
+    "Salary": null,
+    "RemoteWork": false,
+    "JobDescription": ""
+  }
+]
